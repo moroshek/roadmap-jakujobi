@@ -193,3 +193,17 @@
 - [DECISION] Phase 2 APPROVED - all requirements met, code quality excellent
 - [NOTE] Ready for Phase 3: Matrix UI Core (100-135 min)
 - [NOTE] Confidence: Very High (98%), Risk: Low, Recommendation: Proceed to P3
+
+## 2026-02-15 Date Validation Fix (COMPLETED)
+
+- [FIX] Strengthened date validation in projectSchema.ts
+  - Added `isValidCalendarDate()` - validates dates are calendrically valid, not just YYYY-MM-DD format
+  - Rejects invalid dates: 2025-02-30 (nonexistent day), 2025-13-01 (nonexistent month), 2025-02-00, 2025-00-15
+  - Prevents Invalid Date (NaN) from propagating when `new Date()` receives bad input
+- [FIX] Added `parseValidDate()` in transformProjects.ts as defensive layer
+  - Throws with clear error if Date creation yields Invalid Date
+  - Protects downstream logic even if schema is bypassed
+- [ADD] 4 unit tests in projectSchema for invalid calendar dates
+- [ADD] 1 integration test in transformProjects for invalid date rejection
+- [NOTE] Test count: 82 passing (77 previously + 4 new unit + 1 new integration)
+- [NOTE] Root cause: Regex-only format check let 2025-13-01 pass; JS returns Invalid Date (NaN). 2025-02-30 rolls over to March 2 silently
