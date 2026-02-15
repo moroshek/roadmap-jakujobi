@@ -43,10 +43,21 @@ You are not expected to finish everything. Choose the areas where you can make t
 
 ## **3\. The Repository Structure**
 
-* src/app: The Next.js App Router structure (pages are currently empty placeholders).  
+* src/app: The Next.js App Router structure (layout, home page, /matrix placeholder).  
 * src/lib: Where your logic/utils should go.  
 * \_content/projects: Seeded with starter synthetic project files for the matrix exercise.  
 * Roadmap Engine PRD.md: The source of truth for logic and design.
+
+### **3.0 Getting Started**
+
+```bash
+npm install
+npm run dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000). The `/matrix` route is available at [http://localhost:3000/matrix](http://localhost:3000/matrix).
+
+Build for production: `npm run build`
 
 ## **3.1 Starter Dataset (AutoNova Motors Synthetic Content)**
 
