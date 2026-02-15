@@ -12,7 +12,7 @@ export const normalizeScore = (rawScore) => {
   const numeric = Number(rawScore);
   if (Number.isNaN(numeric)) return 0;
   const clamped = clamp(numeric, RAW_MIN, RAW_MAX);
-  return Math.round((clamped / RAW_MAX) * 1000) / 10;
+  return Math.round((clamped / RAW_MAX) * 100);
 };
 
 export const getQuadrantLabel = ({ impact, effort }) => {
