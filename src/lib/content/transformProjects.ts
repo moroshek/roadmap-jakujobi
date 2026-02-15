@@ -19,6 +19,19 @@ import { ZodError } from "zod";
 import { readAllProjectFiles } from "./loadProjects";
 
 /**
+ * Parses a date string and returns a valid Date, or throws if invalid.
+ * Defensive check: schema validates calendar dates, but this prevents
+ * Invalid Date (NaN) from propagating if validation is bypassed.
+ */
+function parseValidDate(dateStr: string, fieldName: string): Date {
+  const date = new Date(dateStr);
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(`Invalid date for ${fieldName}: "${dateStr}" produces Invalid Date`);
+  }
+  return date;
+}
+
+/**
  * Validation result for a single project
  */
 export interface ValidationResult {
@@ -47,10 +60,10 @@ export function transformProject(
     const quadrant = assignQuadrant(impactNormalized, effortNormalized);
 
     const dates = {
-      planned_start: new Date(validated.dates.planned_start),
-      planned_end: new Date(validated.dates.planned_end),
+      planned_start: parseValidDate(validated.dates.planned_start, "planned_start"),
+      planned_end: parseValidDate(validated.dates.planned_end, "planned_end"),
       actual_start: validated.dates.actual_start
-        ? new Date(validated.dates.actual_start)
+        ? parseValidDate(validated.dates.actual_start, "actual_start")
         : undefined,
     };
 

@@ -159,6 +159,42 @@ describe("ProjectSchema", () => {
       expect(result.success).toBe(false);
     });
 
+    test("should reject invalid calendar date - nonexistent day (2025-02-30)", () => {
+      const invalid = {
+        ...validProject,
+        dates: { ...validProject.dates, planned_start: "2025-02-30" },
+      };
+      const result = ProjectSchema.safeParse(invalid);
+      expect(result.success).toBe(false);
+    });
+
+    test("should reject invalid calendar date - nonexistent month (2025-13-01)", () => {
+      const invalid = {
+        ...validProject,
+        dates: { ...validProject.dates, planned_start: "2025-13-01" },
+      };
+      const result = ProjectSchema.safeParse(invalid);
+      expect(result.success).toBe(false);
+    });
+
+    test("should reject invalid calendar date - day zero (2025-02-00)", () => {
+      const invalid = {
+        ...validProject,
+        dates: { ...validProject.dates, planned_start: "2025-02-00" },
+      };
+      const result = ProjectSchema.safeParse(invalid);
+      expect(result.success).toBe(false);
+    });
+
+    test("should reject invalid calendar date - month zero (2025-00-15)", () => {
+      const invalid = {
+        ...validProject,
+        dates: { ...validProject.dates, planned_start: "2025-00-15" },
+      };
+      const result = ProjectSchema.safeParse(invalid);
+      expect(result.success).toBe(false);
+    });
+
     test("should reject negative cost", () => {
       const invalid = {
         ...validProject,

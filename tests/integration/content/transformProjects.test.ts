@@ -70,6 +70,26 @@ describe("Project Transformation Pipeline", () => {
       expect(result.errors).toBeDefined();
       expect(result.errors!.length).toBeGreaterThan(0);
     });
+
+    it("should reject invalid calendar dates (e.g., 2025-02-30)", () => {
+      const rawProjects = readAllProjectFiles();
+      const firstRaw = rawProjects[0];
+      const frontmatterWithBadDate = {
+        ...(firstRaw.frontmatter as object),
+        dates: {
+          planned_start: "2025-02-30",
+          planned_end: "2026-07-15",
+        },
+      };
+
+      const result = transformProject(frontmatterWithBadDate, firstRaw.filename);
+
+      expect(result.success).toBe(false);
+      expect(result.errors).toBeDefined();
+      expect(result.errors!.some((e) => e.toLowerCase().includes("date"))).toBe(
+        true
+      );
+    });
   });
 
   describe("transformAllProjects", () => {
