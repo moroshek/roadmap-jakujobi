@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Strategy Matrix</title>
     <style>
-      body { font-family: Inter, Arial, sans-serif; margin: 0; background: #f8fafc; color: #0b1220; }
-      main { max-width: 980px; margin: 32px auto; padding: 0 16px; }
-      .card { background: #fff; border: 1px solid #dbe3ef; border-radius: 12px; padding: 16px; box-shadow: 0 2px 6px rgba(11, 18, 32, 0.04); }
-      .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-      .hint { color: #4b5563; font-size: 14px; }
+      body { font-family: Inter, Arial, sans-serif; margin: 0; background: linear-gradient(180deg, #f8fafc 0%, #eef4ff 100%); color: #0b1220; }
+      main { max-width: 1020px; margin: 32px auto; padding: 0 16px; }
+      .card { background: #fff; border: 1px solid #dbe3ef; border-radius: 14px; padding: 16px; box-shadow: 0 8px 22px rgba(11, 18, 32, 0.06); }
+      .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+      .hint { color: #4b5563; font-size: 14px; margin: 0; }
+      .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+      .chip { border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #334155; padding: 6px 12px; font-size: 13px; cursor: pointer; transition: .15s ease; }
+      .chip:hover { border-color: #2563eb; color: #1d4ed8; }
+      .chip.active { background: #2563eb; border-color: #1d4ed8; color: #fff; }
       svg { width: 100%; height: auto; background: #fff; }
-      .tooltip { position: fixed; pointer-events: none; background: #0b1220; color: #fff; padding: 8px 10px; border-radius: 8px; font-size: 12px; display: none; }
+      .tooltip { position: fixed; pointer-events: none; background: #0b1220; color: #fff; padding: 10px 12px; border-radius: 8px; font-size: 12px; line-height: 1.4; display: none; max-width: 280px; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35); }
       .legend { font-size: 12px; fill: #334155; }
+      .summary { margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
+      .summary-item { border: 1px solid #dbe3ef; border-radius: 10px; padding: 10px 12px; background: #f8fafc; }
+      .summary-item strong { display: block; font-size: 18px; color: #0f172a; }
     </style>
   </head>
   <body>
@@ -23,7 +30,9 @@
           <span class="hint" id="count"></span>
         </div>
         <p class="hint">X-Axis: Effort / Y-Axis: Impact</p>
+        <div class="toolbar" id="filters" role="toolbar" aria-label="Quadrant filter controls"></div>
         <svg id="matrix" viewBox="0 0 860 520" aria-label="Strategy matrix scatter plot"></svg>
+        <div class="summary" id="summary"></div>
       </div>
     </main>
     <div id="tooltip" class="tooltip"></div>
@@ -31,9 +40,13 @@
       const svg = document.getElementById('matrix');
       const tooltip = document.getElementById('tooltip');
       const count = document.getElementById('count');
+      const filters = document.getElementById('filters');
+      const summary = document.getElementById('summary');
       const margin = { top: 20, right: 20, bottom: 40, left: 50 };
       const width = 860 - margin.left - margin.right;
       const height = 520 - margin.top - margin.bottom;
+      let allProjects = [];
+      let activeFilter = 'All';
 
       const x = (v) => margin.left + (v / 100) * width;
       const y = (v) => margin.top + height - (v / 100) * height;
@@ -59,11 +72,97 @@
         el.setAttribute('class', css);
         return el;
       }
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+      }
+      function getVisibleProjects() {
+        return activeFilter === 'All'
+          ? allProjects
+          : allProjects.filter((project) => project.quadrantLabel === activeFilter);
+      }
+      function showTooltip(project, left, top) {
+        tooltip.style.display = 'block';
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
+        tooltip.innerHTML = `<strong>${escapeHtml(project.title)}</strong><br>${escapeHtml(project.quadrantLabel)}<br>Impact ${project.impact} / Effort ${project.effort}`;
+      }
+      function drawDots(projects) {
+        svg.querySelectorAll('circle').forEach((circle) => circle.remove());
+        projects.forEach((project) => {
+          const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          dot.setAttribute('cx', x(project.effort));
+          dot.setAttribute('cy', y(project.impact));
+          dot.setAttribute('r', 7);
+          dot.setAttribute('fill', '#2563eb');
+          dot.setAttribute('stroke', '#1e3a8a');
+          dot.setAttribute('stroke-width', '1');
+          dot.setAttribute('tabindex', '0');
+          dot.setAttribute('aria-label', `${project.title}. ${project.quadrantLabel}. Impact ${project.impact}. Effort ${project.effort}`);
+          dot.style.cursor = 'pointer';
+          dot.addEventListener('mousemove', (event) => {
+            showTooltip(project, event.clientX + 12, event.clientY + 12);
+          });
+          dot.addEventListener('focus', () => {
+            const box = dot.getBoundingClientRect();
+            showTooltip(project, box.left + 12, box.top - 54);
+          });
+          dot.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              const box = dot.getBoundingClientRect();
+              showTooltip(project, box.left + 12, box.top - 54);
+            }
+            if (event.key === 'Escape') tooltip.style.display = 'none';
+          });
+          dot.addEventListener('blur', () => { tooltip.style.display = 'none'; });
+          dot.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+          add(dot);
+        });
+      }
+      function renderSummary(projects) {
+        const labels = ['Quick Wins', 'Big Bets', 'Fillers', 'Time Sinks'];
+        summary.replaceChildren();
+        labels.forEach((label) => {
+          const countByLabel = projects.filter((project) => project.quadrantLabel === label).length;
+          const item = document.createElement('div');
+          item.className = 'summary-item';
+          const labelEl = document.createElement('span');
+          labelEl.className = 'hint';
+          labelEl.textContent = label;
+          const countEl = document.createElement('strong');
+          countEl.textContent = String(countByLabel);
+          item.appendChild(labelEl);
+          item.appendChild(countEl);
+          summary.appendChild(item);
+        });
+      }
+      function renderFilters() {
+        const labels = ['All', 'Quick Wins', 'Big Bets', 'Fillers', 'Time Sinks'];
+        filters.replaceChildren();
+        labels.forEach((label) => {
+          const button = document.createElement('button');
+          button.className = `chip${activeFilter === label ? ' active' : ''}`;
+          button.setAttribute('aria-pressed', activeFilter === label ? 'true' : 'false');
+          button.setAttribute('data-label', label);
+          button.textContent = label;
+          filters.appendChild(button);
+        });
+      }
+      filters.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-label]');
+        if (!button) return;
+        activeFilter = button.getAttribute('data-label');
+        renderFilters();
+        const visibleProjects = getVisibleProjects();
+        count.textContent = `${visibleProjects.length} / ${allProjects.length} projects`;
+        drawDots(visibleProjects);
+      });
 
       async function render() {
         const response = await fetch('./data.json');
         const data = await response.json();
-        count.textContent = `${data.projects.length} projects`;
+        allProjects = data.projects;
+        count.textContent = `${allProjects.length} / ${allProjects.length} projects`;
 
         add(rect(margin.left, margin.top, width / 2, height / 2, '#d1fae5', '0.35'));
         add(rect(margin.left + width / 2, margin.top, width / 2, height / 2, '#dbeafe', '0.35'));
@@ -81,23 +180,9 @@
         add(text('Effort', margin.left + width / 2 - 14, margin.top + height + 32));
         add(text('Impact', 10, margin.top + height / 2));
 
-        data.projects.forEach((project) => {
-          const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-          dot.setAttribute('cx', x(project.effort));
-          dot.setAttribute('cy', y(project.impact));
-          dot.setAttribute('r', 7);
-          dot.setAttribute('fill', '#2563eb');
-          dot.setAttribute('stroke', '#1e3a8a');
-          dot.setAttribute('stroke-width', '1');
-          dot.addEventListener('mousemove', (event) => {
-            tooltip.style.display = 'block';
-            tooltip.style.left = `${event.clientX + 12}px`;
-            tooltip.style.top = `${event.clientY + 12}px`;
-            tooltip.textContent = `${project.title} — ${project.quadrantLabel}`;
-          });
-          dot.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
-          add(dot);
-        });
+        drawDots(allProjects);
+        renderFilters();
+        renderSummary(allProjects);
       }
 
       render().catch((error) => {
