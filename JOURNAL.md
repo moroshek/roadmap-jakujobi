@@ -36,6 +36,8 @@
 
 **Primary Guide:** `docs/planning/2026-02-15-execution-roadmap.md`
 
+**Phase 1 Detail:** `docs/planning/2026-02-15-phase1-execution-plan.md` (TDD Core Logic, agent-ready)
+
 **Phase Breakdown:**
 
 - Phase 0 (0-15 min): Preflight - environment check
@@ -88,3 +90,25 @@
 - [DECISION] I sent off a separate cloud agent on GitHub co-pilot to try to create an ideation of this project, basically a possible version. I wanna see how it could look like.
 - [NOTE] the cloud copilot agent's result was logically on the right way, but it seems that we may need to do better work on the UI and UX so as to have a better looking screen or a better looking interface.
 - [DECISION] we will continue our current method of developing this together. I believe that by working together, we have a lot better result.
+
+## 2026-02-15 Phase 1 Detailed Planning
+
+- [PLAN] Created comprehensive Phase 1 execution plan for TDD Core Logic (25-75 minute window)
+- [ADD] Document: `docs/planning/2026-02-15-phase1-execution-plan.md` (detailed agent-ready plan)
+- [NOTE] Plan includes:
+  - Complete type system specification (`src/lib/types.ts`)
+  - TDD cycle for normalization logic (0-10 to 0-100)
+  - TDD cycle for quadrant assignment (matching PRD exactly)
+  - Zod validation schema for project frontmatter
+  - 72 comprehensive unit tests with boundary conditions
+  - Validation criteria and exit gates
+  - Troubleshooting guide and success metrics
+- [NOTE] Plan is ready for autonomous agent execution
+- [NOTE] Expected deliverables: All core logic tested and verified before UI work begins
+
+## 2026-02-15 Documentation Update
+
+- [UPDATE] Cross-referenced Phase 1 execution plan across docs
+- [UPDATE] Execution roadmap P1 section links to detailed plan
+- [UPDATE] Master plan index includes Phase 1 execution plan
+- [UPDATE] Planning Summary in journal references Phase 1 execution plan

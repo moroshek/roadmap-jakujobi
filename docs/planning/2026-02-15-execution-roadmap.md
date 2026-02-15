@@ -75,6 +75,8 @@ Fallback if blocked:
 
 ### P1 - TDD Core Logic (25-75 min)
 
+**Detailed Plan:** See `docs/planning/2026-02-15-phase1-execution-plan.md` for the full agent-ready implementation guide.
+
 Purpose:
 
 - Build deterministic governance logic first (test-first), before UI wiring.
