@@ -17,7 +17,9 @@ Primary execution source of truth: `docs/planning/2026-02-15-execution-roadmap.m
 
 | Plan | File | Purpose | Status |
 |------|------|---------|--------|
-| Execution Roadmap | `2026-02-15-execution-roadmap.md` | End-to-end phased execution with validation gates and file map | ✅ Approved |
+| Execution Roadmap | `2026-02-15-execution-roadmap.md` | End-to-end phased execution with validation gates and file map | Approved |
+| Phase 1 Execution | `2026-02-15-phase1-execution-plan.md` | Detailed P1 TDD Core Logic plan (agent-ready, 50 unit tests) | ✅ Complete |
+| Phase 2 Execution | `2026-02-15-phase2-execution-plan.md` | Detailed P2 Data Pipeline plan (agent-ready, 28 integration tests) | ✅ Approved |
 | PRD Compliance | `2026-02-15-prd-compliance-plan.md` | Map requirements to implementation | ✅ Approved |
 | Scope Freeze | `2026-02-15-scope-freeze-plan.md` | Define in/out of scope | ✅ Approved |
 | Architecture | `2026-02-15-architecture-plan.md` | Data flow & structure | ✅ Approved |

@@ -75,6 +75,8 @@ Fallback if blocked:
 
 ### P1 - TDD Core Logic (25-75 min)
 
+**Detailed Plan:** See `docs/planning/2026-02-15-phase1-execution-plan.md` for the full agent-ready implementation guide.
+
 Purpose:
 
 - Build deterministic governance logic first (test-first), before UI wiring.
@@ -117,32 +119,37 @@ Fallback if blocked:
 
 ### P2 - Data Pipeline (75-100 min)
 
+**Detailed Plan:** See `docs/planning/2026-02-15-phase2-execution-plan.md` for the full agent-ready implementation guide.
+
 Purpose:
 
 - Connect markdown source to matrix-ready data model.
 
 Files to create/update:
 
-- `src/lib/content/loadProjects.ts`
-- `src/lib/content/loadConfig.ts`
-- `src/lib/governance/transformProjects.ts` (or keep in `matrix.ts` if simpler)
-- `tests/integration/data/loadProjects.integration.test.ts`
+- `src/lib/content/loadProjects.ts` (file reading + gray-matter parsing)
+- `src/lib/content/loadConfig.ts` (tenant configuration loader)
+- `src/lib/content/transformProjects.ts` (validation + normalization pipeline)
+- `tests/integration/content/loadProjects.test.ts` (8 tests)
+- `tests/integration/content/loadConfig.test.ts` (5 tests)
+- `tests/integration/content/transformProjects.test.ts` (15 tests)
 
 Implementation notes:
 
 - Parse frontmatter with `gray-matter`.
-- Validate each project with Zod.
-- Apply normalization and quadrant assignment.
-- Produce matrix points for chart (`x`, `y`, `quadrant`, `title`, `roi`, etc.).
+- Validate each project with Zod schema from P1.
+- Apply normalization and quadrant assignment using P1 functions.
+- Produce ProcessedProject[] with matrix-ready fields.
+- 28 new integration tests covering complete data pipeline.
 
 Commands/validation:
 
-- `npm run test:integration`
+- `npm run test` (should show 78 passing tests: 50 from P1 + 28 from P2)
 - Manual data spot-check from seeded data:
-  - PRJ-001 -> Quick Wins (86,32)
-  - PRJ-002 -> Big Bets (91,82)
-  - PRJ-003 -> Fillers (39,28)
-  - PRJ-004 -> Time Sinks (41,87)
+  - PRJ-001 (8.6, 3.2) → Quick Wins (86, 32) ✅
+  - PRJ-002 (9.1, 8.2) → Big Bets (91, 82) ✅
+  - PRJ-003 (3.9, 2.8) → Fillers (39, 28) ✅
+  - PRJ-004 (4.1, 8.7) → Time Sinks (41, 87) ✅
 
 Exit gate:
 
