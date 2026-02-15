@@ -1,0 +1,10 @@
+{
+  "name": "roadmap-jakujobi",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-matrix-data.mjs",
+    "test": "node --test src/lib/matrix.test.js"
+  }
+}

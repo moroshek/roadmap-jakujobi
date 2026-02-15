@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "id": "PRJ-001",
+      "title": "Factory Predictive Maintenance Rollout",
+      "impact": 86,
+      "effort": 32,
+      "quadrantLabel": "Quick Wins"
+    },
+    {
+      "id": "PRJ-002",
+      "title": "Battery Supply Risk Hedging Program",
+      "impact": 91,
+      "effort": 82,
+      "quadrantLabel": "Big Bets"
+    },
+    {
+      "id": "PRJ-003",
+      "title": "Dealer Portal UX Refresh",
+      "impact": 39,
+      "effort": 28,
+      "quadrantLabel": "Fillers"
+    },
+    {
+      "id": "PRJ-004",
+      "title": "Legacy Warranty Mainframe Rewrite",
+      "impact": 41,
+      "effort": 87,
+      "quadrantLabel": "Time Sinks"
+    }
+  ]
+}

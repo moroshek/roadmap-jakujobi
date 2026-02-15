@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strategy Matrix</title>
+    <style>
+      body { font-family: Inter, Arial, sans-serif; margin: 0; background: #f8fafc; color: #0b1220; }
+      main { max-width: 980px; margin: 32px auto; padding: 0 16px; }
+      .card { background: #fff; border: 1px solid #dbe3ef; border-radius: 12px; padding: 16px; box-shadow: 0 2px 6px rgba(11, 18, 32, 0.04); }
+      .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+      .hint { color: #4b5563; font-size: 14px; }
+      svg { width: 100%; height: auto; background: #fff; }
+      .tooltip { position: fixed; pointer-events: none; background: #0b1220; color: #fff; padding: 8px 10px; border-radius: 8px; font-size: 12px; display: none; }
+      .legend { font-size: 12px; fill: #334155; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <div class="row">
+          <h1>Strategy Matrix</h1>
+          <span class="hint" id="count"></span>
+        </div>
+        <p class="hint">X-Axis: Effort / Y-Axis: Impact</p>
+        <svg id="matrix" viewBox="0 0 860 520" aria-label="Strategy matrix scatter plot"></svg>
+      </div>
+    </main>
+    <div id="tooltip" class="tooltip"></div>
+    <script>
+      const svg = document.getElementById('matrix');
+      const tooltip = document.getElementById('tooltip');
+      const count = document.getElementById('count');
+      const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+      const width = 860 - margin.left - margin.right;
+      const height = 520 - margin.top - margin.bottom;
+
+      const x = (v) => margin.left + (v / 100) * width;
+      const y = (v) => margin.top + height - (v / 100) * height;
+
+      function add(el) { svg.appendChild(el); return el; }
+      function rect(xVal, yVal, w, h, fill, opacity) {
+        const el = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        el.setAttribute('x', xVal); el.setAttribute('y', yVal);
+        el.setAttribute('width', w); el.setAttribute('height', h);
+        el.setAttribute('fill', fill); el.setAttribute('opacity', opacity);
+        return el;
+      }
+      function line(x1, y1, x2, y2, stroke) {
+        const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        el.setAttribute('x1', x1); el.setAttribute('y1', y1);
+        el.setAttribute('x2', x2); el.setAttribute('y2', y2);
+        el.setAttribute('stroke', stroke);
+        return el;
+      }
+      function text(content, xVal, yVal, css='legend') {
+        const el = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        el.textContent = content; el.setAttribute('x', xVal); el.setAttribute('y', yVal);
+        el.setAttribute('class', css);
+        return el;
+      }
+
+      async function render() {
+        const response = await fetch('./data.json');
+        const data = await response.json();
+        count.textContent = `${data.projects.length} projects`;
+
+        add(rect(margin.left, margin.top, width / 2, height / 2, '#d1fae5', '0.35'));
+        add(rect(margin.left + width / 2, margin.top, width / 2, height / 2, '#dbeafe', '0.35'));
+        add(rect(margin.left, margin.top + height / 2, width / 2, height / 2, '#fef3c7', '0.35'));
+        add(rect(margin.left + width / 2, margin.top + height / 2, width / 2, height / 2, '#fee2e2', '0.35'));
+
+        add(line(margin.left, margin.top + height / 2, margin.left + width, margin.top + height / 2, '#64748b'));
+        add(line(margin.left + width / 2, margin.top, margin.left + width / 2, margin.top + height, '#64748b'));
+
+        add(text('Quick Wins', margin.left + 8, margin.top + 16));
+        add(text('Big Bets', margin.left + width / 2 + 8, margin.top + 16));
+        add(text('Fillers', margin.left + 8, margin.top + height / 2 + 16));
+        add(text('Time Sinks', margin.left + width / 2 + 8, margin.top + height / 2 + 16));
+
+        add(text('Effort', margin.left + width / 2 - 14, margin.top + height + 32));
+        add(text('Impact', 10, margin.top + height / 2));
+
+        data.projects.forEach((project) => {
+          const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          dot.setAttribute('cx', x(project.effort));
+          dot.setAttribute('cy', y(project.impact));
+          dot.setAttribute('r', 7);
+          dot.setAttribute('fill', '#2563eb');
+          dot.setAttribute('stroke', '#1e3a8a');
+          dot.setAttribute('stroke-width', '1');
+          dot.addEventListener('mousemove', (event) => {
+            tooltip.style.display = 'block';
+            tooltip.style.left = `${event.clientX + 12}px`;
+            tooltip.style.top = `${event.clientY + 12}px`;
+            tooltip.textContent = `${project.title} — ${project.quadrantLabel}`;
+          });
+          dot.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+          add(dot);
+        });
+      }
+
+      render().catch((error) => {
+        count.textContent = 'Failed to load matrix data';
+        console.error(error);
+      });
+    </script>
+  </body>
+</html>

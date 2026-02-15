@@ -71,3 +71,14 @@ Candidates may extend or modify this data during implementation, but the provide
 4. **Velocity:** How much functionality were you able to ship in the timebox?
 
 **Good luck.**
+
+## Local matrix preview
+
+This repository now includes a minimal working Strategy Matrix at `/matrix`.
+
+```bash
+npm run build
+python3 -m http.server 4173
+```
+
+Then open `http://127.0.0.1:4173/matrix/`.
