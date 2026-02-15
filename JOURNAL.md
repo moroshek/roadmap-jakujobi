@@ -12,3 +12,8 @@
   - src/app/ and scripts/ directories contain only .gitkeep files (empty skeleton)
 - [NOTE] Project contains: PRD documentation, sample project data (PRJ-001 to PRJ-004), interview transcripts, and config.json
 - [NOTE] This is a Next.js-based strategic roadmap visualization tool assessment starter
+
+
+## 2026-02-15 4:20pm
+
+- [ADD] Added a gitignore file
