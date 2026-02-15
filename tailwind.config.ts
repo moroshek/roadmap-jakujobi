@@ -1,8 +1,8 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  // App Router only; src/pages omitted (Pages Router not used)
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],

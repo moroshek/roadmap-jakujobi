@@ -10,7 +10,7 @@ Strategy: Assessment-pass-first, TDD-first
 - `src/lib/` is ready for content loaders, governance, validation modules.
 - `_content/projects/` already has 4 seeded projects (`PRJ-001` to `PRJ-004`) covering all matrix quadrants.
 - `_content/config.json` contains tenant tokens and taxonomies.
-- Project bootstrap complete: package.json, tsconfig, next.config.js, postcss.config.js, Tailwind, Vitest. `npm run build` passes. P0 exit gate met: `/` and `/matrix` render.
+- Project bootstrap complete: package.json, tsconfig, next.config.js, postcss.config.mjs, Tailwind, Vitest. `npm run build` passes. P0 exit gate met: `/` and `/matrix` render.
 
 This roadmap assumes we build the app foundation and the matrix feature in one implementation pass.
 
@@ -48,7 +48,7 @@ Files to create/update:
 - `package.json`
 - `tsconfig.json`
 - `next.config.js` (Next.js 14 does not support .ts)
-- `postcss.config.js`
+- `postcss.config.mjs`
 - `src/app/layout.tsx`
 - `src/app/page.tsx`
 - `src/app/matrix/page.tsx` (placeholder)

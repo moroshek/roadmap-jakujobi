@@ -79,7 +79,7 @@
 - [NOTE] npm install successful (399 packages)
 - [NOTE] npm run build passes - static export of / and /matrix routes
 - [NOTE] Phase 0/1 bootstrap complete per execution roadmap - ready for P1 TDD Core Logic
-- [UPDATE] Aligned config filenames: next.config.js, postcss.config.js (next.config.ts not supported by Next.js 14)
+- [UPDATE] Config: next.config.js, postcss.config.mjs (next.config.ts not supported by Next.js 14)
 
 
 ## 2026-02-15 4:20pm - John

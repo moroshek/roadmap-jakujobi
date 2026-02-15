@@ -38,7 +38,7 @@ Roadmap P0 lists:
 | package.json | Yes | Next.js 14, React 18, TS, Tailwind, gray-matter, Recharts, Zod, Vitest, Testing Library |
 | tsconfig.json | Yes | Strict, path alias `@/*` -> `./src/*` |
 | next.config.js | Yes | Replaces deleted .mjs; static export; Next.js 14 compatible |
-| postcss.config.js | Yes | Replaces deleted .mjs; tailwind + autoprefixer |
+| postcss.config.mjs | Yes | ESM; tailwind + autoprefixer |
 | src/app/layout.tsx | Yes | Root layout, metadata, globals.css |
 | src/app/page.tsx | Yes | Home with link to /matrix |
 | src/app/matrix/page.tsx | Yes | Placeholder text only |
@@ -47,7 +47,7 @@ Roadmap P0 lists:
 | vitest.config.ts | Yes | jsdom, React plugin, path alias, setup.ts |
 | tests/setup.ts | Yes | jest-dom import |
 
-All P0 files are present. Config filenames (.js instead of .mjs) match the roadmap note that Next.js 14 does not support next.config.ts and align with the decision to use .js for config.
+All P0 files are present. next.config.js used (Next.js 14 does not support .ts). postcss.config.mjs used for ESM.
 
 ---
 
@@ -67,10 +67,13 @@ All P0 files are present. Config filenames (.js instead of .mjs) match the roadm
 
 ---
 
-## 5. Gaps and Minor Fixes
+## 5. Gaps and Minor Fixes (Resolved)
 
-1. **Changelog:** Previously said `postcss.config.mjs`; corrected to `postcss.config.js`.
-2. **tailwind.config.ts:** `content` includes `./src/pages/**/*` but the app uses App Router only (`src/app/`). No functional issue; optional cleanup is to remove `src/pages` if we never add Pages Router.
+1. **Changelog:** Restored to `postcss.config.mjs` (ESM).
+2. **tailwind.config.ts content paths:**
+   - **Option A (chosen):** Remove `src/pages` – app uses App Router only; Pages Router not used. Keeps content array minimal and avoids scanning an empty/non-existent directory.
+   - **Option B:** Keep `src/pages` – harmless but redundant; Tailwind would scan a directory we never use. Only useful if you plan to add Pages Router later (e.g. for API routes or legacy pages).
+   - **Option C:** Add both and document – explicitly list `src/app` and `src/components` only; no `src/pages`. Same outcome as A, just more explicit.
 3. **P1 not started:** No `src/lib/types.ts`, `src/lib/governance/matrix.ts`, `src/lib/validation/projectSchema.ts`, or unit tests under `tests/unit/`. This is expected; next step is P1 TDD Core Logic.
 
 ---
@@ -92,7 +95,7 @@ All P0 files are present. Config filenames (.js instead of .mjs) match the roadm
 ## 7. Recommended Next Steps
 
 1. **Proceed to P1 – TDD Core Logic:** Add `src/lib/types.ts`, `src/lib/governance/matrix.ts`, `src/lib/validation/projectSchema.ts`, and the unit tests specified in the roadmap (normalizeScore, assignQuadrant, schema validation). Run `npm run test:unit` and satisfy the P1 exit gate (boundary cases at 50, clamp behavior, quadrant labels per PRD).
-2. **Optional:** Remove `./src/pages/**/*` from `tailwind.config.ts` content if you do not plan to use the Pages Router.
+2. ~~Optional: Remove `./src/pages` from tailwind content~~ Done.
 3. **Keep** the execution roadmap as the single source of truth for phase order and file lists; update JOURNAL when P1 is complete.
 
 ---
