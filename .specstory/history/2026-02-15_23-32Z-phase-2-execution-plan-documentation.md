@@ -1036,3 +1036,536 @@ Date validation only checks the `YYYY-MM-DD` format using regex but doesn't vali
 
 ---
 
+_**Agent (model composer-1.5, mode Agent)**_
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\lib\validation\projectSchema.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\lib\content\transformProjects.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Fixing date validation**
+
+I'm adding calendrical validity checks to the dateStringSchema to prevent invalid dates from being processed. I'm adding a Zod refinement to dateStringSchema to ensure parsed dates are valid and not NaN. I'm checking the behavior of invalid dates like '2025-02-30' across different JavaScript engines to ensure consistent validation. I'm implementing a more reliable date parsing approach that validates components match input rather than relying on normalization. 
+
+**Validating date components**
+
+I'm using string date parsing to validate components match input, avoiding normalization issues. I'm implementing a deterministic date validation approach using regex matching and explicit year/month/day parsing. I'm using JavaScript's Date object to validate date components by leveraging its automatic rollover behavior. I'm adding a refine validation to ensure date components match after parsing. </details></think>
+
+---
+
+
+Verifying invalid-date behavior and checking existing tests:
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: node -e "console.log('2025-02-30:', new Date('2025-02-30')); console.log('getTime:', new Date('2025-02-30').getTime()); console.log('2025-13-01:', new Date('2025-13-01')); console.log('getTime:', new Date('2025-13-01').getTime());"</summary>
+
+```bash
+node -e "console.log('2025-02-30:', new Date('2025-02-30')); console.log('getTime:', new Date('2025-02-30').getTime()); console.log('2025-13-01:', new Date('2025-13-01')); console.log('getTime:', new Date('2025-13-01').getTime());"
+```
+
+```
+2025-02-30: 2025-03-02T00:00:00.000Z
+getTime: 1740873600000
+2025-13-01: Invalid Date
+getTime: NaN
+
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "dateStringSchema|date.*valid",
+  "path": "p:\\repos\\hiring\\roadmap-jakujobi\\tests",
+  "caseInsensitive": false
+}
+```
+Result:
+
+```json
+{
+  "success": {
+    "pattern": "dateStringSchema|date.*valid",
+    "path": "p:\\repos\\hiring\\roadmap-jakujobi\\tests",
+    "outputMode": "content",
+    "workspaceResults": {
+      "p:\\repos\\hiring\\roadmap-jakujobi": {
+        "content": {
+          "matches": [
+            {
+              "file": "tests\\unit\\validation\\projectSchema.test.ts",
+              "matches": [
+                {
+                  "lineNumber": 44,
+                  "content": "        dates: { ...validProject.dates, actual_start: \"2026-02-05\" },"
+                },
+                {
+                  "lineNumber": 156,
+                  "content": "        dates: { ...validProject.dates, planned_start: \"02/01/2026\" },"
+                },
+                {
+                  "lineNumber": 188,
+                  "content": "    test(\"validateProject should throw on invalid data\", () =&gt; {"
+                },
+                {
+                  "lineNumber": 190,
+                  "content": "      expect(() =&gt; validateProject(invalid)).toThrow();"
+                },
+                {
+                  "lineNumber": 193,
+                  "content": "    test(\"validateProject should return typed data on valid input\", () =&gt; {"
+                },
+                {
+                  "lineNumber": 194,
+                  "content": "      const result = validateProject(validProject);"
+                },
+                {
+                  "lineNumber": 199,
+                  "content": "    test(\"safeValidateProject should not throw on invalid data\", () =&gt; {"
+                },
+                {
+                  "lineNumber": 201,
+                  "content": "      const result = safeValidateProject(invalid);"
+                },
+                {
+                  "lineNumber": 205,
+                  "content": "    test(\"safeValidateProject should return success=true on valid data\", () =&gt; {"
+                },
+                {
+                  "lineNumber": 206,
+                  "content": "      const result = safeValidateProject(validProject);"
+                }
+              ]
+            }
+          ],
+          "totalLines": 10,
+          "totalMatchedLines": 10
+        }
+      }
+    }
+  }
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Investigating date parsing**
+
+I discovered that '2025-13-01' creates Invalid Date while '2025-02-30' silently rolls over to March 2, 2025. </details></think>
+
+---
+
+
+Confirming the issue: "2025-13-01" yields Invalid Date (NaN); "2025-02-30" rolls over to March 2 and is misleading. Implementing validation that rejects non-existent calendar dates:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\tests\unit\validation\projectSchema.test.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Updating date validation**
+
+I'm adding a refine function to validate calendrically valid dates in projectSchema.ts. I'm implementing a refine function in projectSchema.ts to validate calendrically valid dates using Date constructor with parsed year, month, and day values. 
+
+I'm adding a check for `isNaN(date.getTime())` to properly handle Invalid Date objects in the calendar validation. I'm implementing regex-based date parsing with validation for the calendar component. </details></think>
+
+---
+
+
+Implementing the fix: adding a calendrical validation refinement to the schema and a defensive check in the transformer.
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\lib\validation\projectSchema.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+Adding a defensive check in the transformer to catch invalid Date objects.
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\lib\content\transformProjects.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\lib\content\transformProjects.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+Adding tests for invalid date validation:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\tests\unit\validation\projectSchema.test.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\tests\unit\validation\projectSchema.test.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd "p:\repos\hiring\roadmap-jakujobi" && npm run test -- --run</summary>
+
+```bash
+cd "p:\repos\hiring\roadmap-jakujobi" && npm run test -- --run
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 test
+&gt; vitest --run
+
+
+ RUN  v1.6.1 P:/repos/hiring/roadmap-jakujobi
+
+ ✓ tests/unit/governance/matrix.normalize.test.ts  (11 tests) 3ms
+ ✓ tests/unit/governance/matrix.quadrant.test.ts  (17 tests) 6ms
+ ✓ tests/unit/validation/projectSchema.test.ts  (26 tests) 11ms
+ ✓ tests/integration/content/loadConfig.test.ts  (5 tests) 4ms
+ ✓ tests/integration/content/loadProjects.test.ts  (8 tests) 12ms
+ ✓ tests/integration/content/transformProjects.test.ts  (14 tests) 27ms
+
+ Test Files  6 passed (6)
+      Tests  81 passed (81)
+   Start at  17:41:23
+   Duration  1.09s (transform 216ms, setup 735ms, collect 489ms, tests 63ms, environment 3.06s, prepare 771ms)
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+```
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Adding integration test**
+
+I'm adding an integration test for transformProject with invalid dates. </details></think>
+
+---
+
+
+Adding an integration test for transformProject with invalid date data:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\tests\integration\content\transformProjects.test.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd "p:\repos\hiring\roadmap-jakujobi" && npm run test -- --run</summary>
+
+```bash
+cd "p:\repos\hiring\roadmap-jakujobi" && npm run test -- --run
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 test
+&gt; vitest --run
+
+
+ RUN  v1.6.1 P:/repos/hiring/roadmap-jakujobi
+
+ ✓ tests/unit/governance/matrix.quadrant.test.ts  (17 tests) 3ms
+ ✓ tests/unit/governance/matrix.normalize.test.ts  (11 tests) 4ms
+ ✓ tests/unit/validation/projectSchema.test.ts  (26 tests) 10ms
+ ✓ tests/integration/content/loadConfig.test.ts  (5 tests) 6ms
+ ✓ tests/integration/content/loadProjects.test.ts  (8 tests) 18ms
+ ✓ tests/integration/content/transformProjects.test.ts  (15 tests) 28ms
+
+ Test Files  6 passed (6)
+      Tests  82 passed (82)
+   Start at  17:41:45
+   Duration  1.05s (transform 140ms, setup 594ms, collect 446ms, tests 69ms, environment 2.99s, prepare 763ms)
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+```
+</details>
+</tool-use>
+
+---
+
+
+All tests passed. Updating the changelog:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\changelog.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "p:\\repos\\hiring\\roadmap-jakujobi\\src\\lib\\validation\\projectSchema.ts",
+    "p:\\repos\\hiring\\roadmap-jakujobi\\src\\lib\\content\\transformProjects.ts"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "p:\\repos\\hiring\\roadmap-jakujobi\\src\\lib\\validation\\projectSchema.ts"
+    },
+    {
+      "relativeWorkspacePath": "p:\\repos\\hiring\\roadmap-jakujobi\\src\\lib\\content\\transformProjects.ts"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+
+Summary of the fix:
+
+## Issue
+
+- **projectSchema.ts** only checked `YYYY-MM-DD` format with regex; invalid dates like `2025-02-30` and `2025-13-01` were accepted.
+- **Result**: `2025-13-01` produced Invalid Date (NaN). `2025-02-30` was parsed as March 2.
+- **Effect**: `NaN` and incorrect dates could flow into downstream logic.
+
+## Changes
+
+### 1. `src/lib/validation/projectSchema.ts`
+
+- Added `isValidCalendarDate()` that:
+  - Ensures month is 1–12
+  - Builds a Date from (year, month–1, day)
+  - Rejects when `date.getTime()` is NaN
+  - Rejects when the reconstructed date components differ from the input (e.g. Feb 30)
+- Applied `.refine(isValidCalendarDate, ...)` to `dateStringSchema` so only valid calendar dates pass.
+
+### 2. `src/lib/content/transformProjects.ts`
+
+- Added `parseValidDate()` helper that throws if `new Date(str)` yields Invalid Date.
+- Replaced direct `new Date()` calls with `parseValidDate()` for `planned_start`, `planned_end`, and `actual_start` as a fallback if validation is bypassed.
+
+### 3. Tests
+
+- **projectSchema**: 4 tests for invalid dates (2025-02-30, 2025-13-01, 2025-02-00, 2025-00-15).
+- **transformProjects**: 1 integration test that `transformProject` rejects a project with an invalid date.
+
+All 82 tests pass.
+
+---
+
+_**User**_
+
+update the journal
+
+---
+
+_**Agent (model composer-1.5, mode Agent)**_
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\JOURNAL.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\JOURNAL.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\JOURNAL.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\JOURNAL.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\JOURNAL.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+Updated `JOURNAL.md` with an entry for the date validation fix describing the schema changes, the `parseValidDate` safeguard, and the new tests.
+
+---
+
