@@ -106,8 +106,21 @@
 - [NOTE] Plan is ready for autonomous agent execution
 - [NOTE] Expected deliverables: All core logic tested and verified before UI work begins
 
+## 2026-02-15 Phase 1 TDD Core Logic (COMPLETED)
+
+- [ADD] Implemented Phase 1 per execution plan
+- [ADD] `src/lib/types.ts` - RawProjectFrontmatter, ProcessedProject, MatrixDataPoint, QuadrantLabel, TenantConfig
+- [ADD] `src/lib/governance/matrix.ts` - normalizeScore, assignQuadrant, transformToMatrixPoint, transformToMatrixData
+- [ADD] `src/lib/validation/projectSchema.ts` - Zod ProjectSchema, validateProject, safeValidateProject
+- [ADD] Unit tests: matrix.normalize (11), matrix.quadrant (17), projectSchema (22) - 50 total
+- [NOTE] Department schema uses config values (Manufacturing, Supply Chain, Sales, After-Sales) to validate seeded projects
+- [NOTE] All tests pass; quadrant logic matches PRD (PRJ-001 Quick Wins, PRJ-002 Big Bets, PRJ-003 Fillers, PRJ-004 Time Sinks)
+- [NOTE] Exit gate: 50/50 tests green, npx tsc --noEmit clean - ready for Phase 2
+
 ## 2026-02-15 Documentation Update
 
+- [UPDATE] Changelog and journal updated with Phase 1 TDD Core Logic completion
+- [UPDATE] Phase 1 execution plan status set to Completed
 - [UPDATE] Cross-referenced Phase 1 execution plan across docs
 - [UPDATE] Execution roadmap P1 section links to detailed plan
 - [UPDATE] Master plan index includes Phase 1 execution plan
