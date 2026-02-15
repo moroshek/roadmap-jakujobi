@@ -19,11 +19,37 @@ const projectStatusSchema = z.enum([
 ]);
 
 /**
- * Date string in ISO format (YYYY-MM-DD)
+ * Validates that a string is a calendrically valid date in YYYY-MM-DD format.
+ * Rejects invalid dates like 2025-02-30 or 2025-13-01 that would produce
+ * Invalid Date or silently roll over to wrong dates.
+ */
+function isValidCalendarDate(str: string): boolean {
+  const match = str.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return false;
+
+  const year = parseInt(match[1], 10);
+  const month = parseInt(match[2], 10);
+  const day = parseInt(match[3], 10);
+
+  if (month < 1 || month > 12) return false;
+
+  const date = new Date(year, month - 1, day);
+  if (Number.isNaN(date.getTime())) return false;
+
+  return (
+    date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day
+  );
+}
+
+/**
+ * Date string in ISO format (YYYY-MM-DD), must be a valid calendar date
  */
 const dateStringSchema = z
   .string()
-  .regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format");
+  .regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format")
+  .refine(isValidCalendarDate, "Date must be a valid calendar date (e.g., 2025-02-30 and 2025-13-01 are invalid)");
 
 /**
  * Score between 0 and 10 (inclusive)

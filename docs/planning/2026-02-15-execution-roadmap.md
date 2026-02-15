@@ -117,7 +117,7 @@ Fallback if blocked:
 
 ---
 
-### P2 - Data Pipeline (75-100 min)
+### P2 - Data Pipeline (75-100 min) [DONE]
 
 **Detailed Plan:** See `docs/planning/2026-02-15-phase2-execution-plan.md` for the full agent-ready implementation guide.
 
