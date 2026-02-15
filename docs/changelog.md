@@ -5,6 +5,15 @@ All notable changes to this project are documented in this file.
 ## [Unreleased]
 
 ### Added
+- 2026-02-15: Phase 2 Data Pipeline (COMPLETED)
+  - `src/lib/content/loadProjects.ts` - File system readers for markdown projects, gray-matter parsing, path utilities (getContentPath, getProjectsPath, readAllProjectFiles, readProjectFile, getProjectCount)
+  - `src/lib/content/loadConfig.ts` - Tenant configuration loader for config.json, getAllowedDepartments, getAllowedPhases, isModuleEnabled
+  - `src/lib/content/transformProjects.ts` - Transformation pipeline: validate with Zod, normalize scores (0-10 to 0-100), assign quadrants, loadAndTransformProjects convenience function
+  - `tests/integration/content/loadProjects.test.ts` - 8 integration tests for content loading
+  - `tests/integration/content/loadConfig.test.ts` - 5 integration tests for config loading
+  - `tests/integration/content/transformProjects.test.ts` - 14 integration tests for complete data pipeline
+  - All 4 seeded projects map correctly: PRJ-001 Quick Wins (86,32), PRJ-002 Big Bets (91,82), PRJ-003 Fillers (39,28), PRJ-004 Time Sinks (41,87)
+  - 77 total tests passing (50 unit + 27 integration); build succeeds
 - 2026-02-15: Phase 1 TDD Core Logic (COMPLETED)
   - `src/lib/types.ts` - Type definitions for RawProjectFrontmatter, ProcessedProject, MatrixDataPoint, QuadrantLabel, TenantConfig
   - `src/lib/governance/matrix.ts` - normalizeScore (0-10 to 0-100), assignQuadrant (PRD quadrant rules), transformToMatrixPoint, transformToMatrixData
@@ -25,6 +34,7 @@ All notable changes to this project are documented in this file.
   - `next-env.d.ts` for Next.js types
 
 ### Changed
+- 2026-02-15: Phase 2 execution plan status updated to Completed
 - 2026-02-15: Phase 1 execution plan status updated to Completed
 - 2026-02-15: `tsconfig.json` excludes `vitest.config.ts` and `tests/` to prevent Next.js build type conflicts with Vitest/Vite
 - 2026-02-15: PostCSS config restored to `postcss.config.mjs` (ESM)
