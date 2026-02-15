@@ -37,6 +37,7 @@
 **Primary Guide:** `docs/planning/2026-02-15-execution-roadmap.md`
 
 **Phase Breakdown:**
+
 - Phase 0 (0-15 min): Preflight - environment check
 - Phase 1 (15-45 min): Skeleton - app routes and baseline
 - Phase 2 (45-90 min): Core Logic - TDD normalize + quadrant + parser
@@ -45,6 +46,7 @@
 - Phase 5 (155-180 min): Verify + Submit
 
 **Key Deliverables:**
+
 1. `/matrix` route with scatter plot (X=effort, Y=impact)
 2. Score normalization (0-10 → 0-100)
 3. Quadrant logic (Quick Wins, Big Bets, Fillers, Time Sinks)
@@ -52,15 +54,15 @@
 5. Unit tests for core logic
 
 **Seeded Projects (already exist):**
+
 - PRJ-001 → Quick Wins (86, 32)
 - PRJ-002 → Big Bets (91, 82)
 - PRJ-003 → Fillers (39, 28)
 - PRJ-004 → Time Sinks (41, 87)
 
+## 2026-02-15 4:20pm - John
 
-## 2026-02-15 4:20pm
-
-- [ADD] Added a gitignore file
+- [ADD] Added a gitignore file - John
 
 ## 2026-02-15 Roadmap Refinement
 
@@ -77,3 +79,12 @@
 - [NOTE] npm install successful (399 packages)
 - [NOTE] npm run build passes - static export of / and /matrix routes
 - [NOTE] Phase 0/1 bootstrap complete per execution roadmap - ready for P1 TDD Core Logic
+- [UPDATE] Aligned config filenames: next.config.js, postcss.config.js (next.config.ts not supported by Next.js 14)
+
+
+## 2026-02-15 4:20pm - John
+
+- [NOTE] The phase 0 was completed successfully. The ":3000" port dispays as expected
+- [DECISION] I sent off a separate cloud agent on GitHub co-pilot to try to create an ideation of this project, basically a possible version. I wanna see how it could look like.
+- [NOTE] the cloud copilot agent's result was logically on the right way, but it seems that we may need to do better work on the UI and UX so as to have a better looking screen or a better looking interface.
+- [DECISION] we will continue our current method of developing this together. I believe that by working together, we have a lot better result.

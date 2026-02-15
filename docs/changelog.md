@@ -8,8 +8,8 @@ All notable changes to this project are documented in this file.
 - 2026-02-15: Project bootstrap (Phase 1 Foundation)
   - `package.json` with Next.js 14, React 18, TypeScript, Tailwind CSS, gray-matter, Recharts, Zod, Vitest
   - `tsconfig.json` with strict mode and path alias `@/*` -> `./src/*`
-  - `next.config.mjs` with static export
-  - `tailwind.config.ts` and `postcss.config.mjs`
+  - `next.config.js` with static export (Next.js 14 does not support next.config.ts)
+  - `tailwind.config.ts` and `postcss.config.js`
   - `vitest.config.ts` with jsdom, React plugin, path alias
   - Root layout (`src/app/layout.tsx`), home page (`src/app/page.tsx`), matrix placeholder (`src/app/matrix/page.tsx`)
   - `src/app/globals.css` with Tailwind directives
@@ -18,3 +18,7 @@ All notable changes to this project are documented in this file.
 
 ### Changed
 - 2026-02-15: `tsconfig.json` excludes `vitest.config.ts` and `tests/` to prevent Next.js build type conflicts with Vitest/Vite
+- 2026-02-15: Changelog corrected postcss config filename (postcss.config.js)
+
+### Documentation
+- 2026-02-15: Phase 1 (P0 Bootstrap) review completed; see `docs/planning/2026-02-15-phase1-review.md`
