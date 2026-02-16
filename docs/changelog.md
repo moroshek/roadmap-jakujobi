@@ -4,7 +4,29 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+### Documentation
+- 2026-02-15: Submission Readiness Plan created
+  - Document: `docs/planning/2026-02-15-submission-readiness-plan.md`
+  - Comprehensive 40-75 minute plan for final documentation and PR submission
+  - 6 tracks: Screenshots (15 min), PR Description (10 min), User Guide (15 min), Deployment Guide (10 min), Contributing Guide (10 min), Final QA (10 min)
+  - Critical path (40 min): Screenshots → PR Description → QA → Submit
+  - Optional enhancements (35 min): User Guide, Deployment Guide, Contributing Guide
+  - Screenshot checklist: 8 required captures (dashboard, matrix, tooltip, filters, gantt, library, detail, mobile)
+  - PR template with complete sections (must-have, bonus, verification, compliance, metrics, time tracking)
+  - User guide template for README (dashboard, matrix, roadmap, library, detail pages, tips & best practices)
+  - Deployment guide template (Vercel, Netlify, GitHub Pages, AWS S3, Docker options)
+  - Contributing guide template (conventions, testing, PR process, code of conduct)
+  - QA checklist: 40 validation items (routes, interactions, responsive, keyboard, data, performance)
+  - Decision gates at minutes 15, 25, 35, 40 with pass/fail criteria
+  - Risk mitigation strategies (screenshot delays, QA bugs, time constraints)
+  - Success criteria in 3 tiers (minimum 40 min, complete 60 min, production-ready 75 min)
+  - Tools & resources section (screenshot tools, markdown editors, checklist tracking)
+  - Post-submission guidance (feedback handling, merge process)
+  - File checklist with 9 must-create items and recommended additions
+
 ### Added
+- 2026-02-15: Project name in nav bar - "Roadmap" as bold brand element with primary color (#0B1220), hover to secondary (#2563EB), links to home
+
 - 2026-02-15: Project documentation suite
   - CONTRIBUTING.md - Development setup, code style guide, testing requirements, PR process, extension guide
   - docs/API.md - Key component APIs, library functions reference, data schema reference

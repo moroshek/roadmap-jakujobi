@@ -15,6 +15,12 @@ export function AppHeader() {
           <nav className="flex items-center gap-6" aria-label="Main navigation">
             <Link
               href="/"
+              className="font-bold text-base text-[#0B1220] hover:text-[#2563EB] transition-colors"
+            >
+              Roadmap
+            </Link>
+            <Link
+              href="/"
               className="text-gray-700 hover:text-gray-900 font-medium text-sm"
             >
               Dashboard

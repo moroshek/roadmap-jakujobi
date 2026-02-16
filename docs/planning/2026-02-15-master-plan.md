@@ -42,6 +42,7 @@ Primary execution source of truth: `docs/planning/2026-02-15-execution-roadmap.m
 | Timebox | `2026-02-15-timebox-plan.md` | Minute-by-minute execution | ✅ Approved |
 | Risk/Contingency | `2026-02-15-risk-contingency-plan.md` | Risks & mitigations | ✅ Approved |
 | Submission | `2026-02-15-submission-plan.md` | PR requirements | ✅ Approved |
+| Submission Readiness | `2026-02-15-submission-readiness-plan.md` | Complete documentation & submission guide | ✅ Ready |
 
 ---
 
