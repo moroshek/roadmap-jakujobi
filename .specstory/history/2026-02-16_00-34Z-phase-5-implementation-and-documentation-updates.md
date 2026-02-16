@@ -12,3 +12,2911 @@ implement this phase 5 and update relevant docs after
 
 ---
 
+_**Agent (model composer-1.5, mode Agent)**_
+
+
+
+
+
+---
+
+File not found
+
+---
+
+File not found
+
+---
+
+File not found
+
+---
+
+File not found
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-execution-roadmap.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+Searching for Phase 5 files:
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "undefined" • **0** result in **1** directory</summary>
+
+Directory: **p:\repos\hiring\roadmap-jakujobi** (0 file)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "undefined" • **0** result in **1** directory</summary>
+
+Directory: **p:\repos\hiring\roadmap-jakujobi** (0 file)
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "PHASE5",
+  "path": "p:\\repos\\hiring\\roadmap-jakujobi",
+  "caseInsensitive": false
+}
+```
+Result:
+
+```json
+{
+  "success": {
+    "pattern": "PHASE5",
+    "path": "p:\\repos\\hiring\\roadmap-jakujobi",
+    "outputMode": "content",
+    "workspaceResults": {
+      "p:\\repos\\hiring\\roadmap-jakujobi": {
+        "content": {
+          "matches": [
+            {
+              "file": ".\\docs\\planning\\PHASE5-SUMMARY.md",
+              "matches": [
+                {
+                  "lineNumber": 40,
+                  "content": "**File:** &#96;docs/planning/PHASE5-AGENT-HANDOFF.md&#96;  "
+                },
+                {
+                  "lineNumber": 655,
+                  "content": "2. **Read Agent Handoff** (&#96;PHASE5-AGENT-HANDOFF.md&#96;) - 5 minutes"
+                }
+              ]
+            },
+            {
+              "file": ".\\docs\\planning\\PHASE5-README.md",
+              "matches": [
+                {
+                  "lineNumber": 15,
+                  "content": "1. **[PHASE5-SUMMARY.md](./PHASE5-SUMMARY.md)** - Start here! Overview of all 3 documents"
+                },
+                {
+                  "lineNumber": 16,
+                  "content": "2. **[PHASE5-AGENT-HANDOFF.md](./PHASE5-AGENT-HANDOFF.md)** - Quick reference guide (read before coding)"
+                },
+                {
+                  "lineNumber": 118,
+                  "content": "- [ ] Read PHASE5-SUMMARY.md (this file)"
+                },
+                {
+                  "lineNumber": 119,
+                  "content": "- [ ] Read PHASE5-AGENT-HANDOFF.md carefully"
+                },
+                {
+                  "lineNumber": 145,
+                  "content": "### PHASE5-SUMMARY.md (This File)"
+                },
+                {
+                  "lineNumber": 161,
+                  "content": "### PHASE5-AGENT-HANDOFF.md"
+                },
+                {
+                  "lineNumber": 234,
+                  "content": "- [Phase 5 Summary](./PHASE5-SUMMARY.md) ← You are here"
+                },
+                {
+                  "lineNumber": 235,
+                  "content": "- [Phase 5 Agent Handoff](./PHASE5-AGENT-HANDOFF.md)"
+                },
+                {
+                  "lineNumber": 289,
+                  "content": "2. 📖 Read [PHASE5-AGENT-HANDOFF.md](./PHASE5-AGENT-HANDOFF.md)"
+                }
+              ]
+            },
+            {
+              "file": ".\\docs\\planning\\2026-02-15-master-plan.md",
+              "matches": [
+                {
+                  "lineNumber": 33,
+                  "content": "| Phase 5 Handoff | &#96;PHASE5-AGENT-HANDOFF.md&#96; | Quick-start guide for agents executing Phase 5 | 🎯 Ready |"
+                },
+                {
+                  "lineNumber": 34,
+                  "content": "| Phase 5 Summary | &#96;PHASE5-SUMMARY.md&#96; | Phase 5 planning package overview (3100+ lines) | 🎯 Ready |"
+                }
+              ]
+            },
+            {
+              "file": ".\\.specstory\\history\\2026-02-16_00-34Z-phase-5-implementation-and-documentation-updates.md",
+              "matches": [
+                {
+                  "lineNumber": 11,
+                  "content": "@docs/planning/PHASE5-SUMMARY.md @docs/planning/PHASE5-README.md @docs/planning/PHASE5-AGENT-HANDOFF.md @docs/planning/2026-02-15-phase5-execution-plan.md @docs/planning/2026-02-15-execution-roadmap.md "
+                }
+              ]
+            }
+          ],
+          "totalLines": 14,
+          "totalMatchedLines": 14
+        }
+      }
+    }
+  }
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-submission-plan.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\planning\PHASE5-SUMMARY.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\planning\PHASE5-README.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "undefined" • **32** results in **1** directory</summary>
+
+Directory: **p:\repos\hiring\roadmap-jakujobi\docs\planning** (32 files)
+
+| File |
+|------|
+| `../docs\planning\README.md` |
+| `../docs\planning\PHASE5-SUMMARY.md` |
+| `../docs\planning\PHASE5-README.md` |
+| `../docs\planning\PHASE5-AGENT-HANDOFF.md` |
+| `../docs\planning\PHASE4-SUMMARY.md` |
+| `../docs\planning\PHASE4-AGENT-HANDOFF.md` |
+| `../docs\planning\PHASE3-SUMMARY.md` |
+| `../docs\planning\PHASE3-AGENT-HANDOFF.md` |
+| `../docs\planning\2026-02-15-web-guidelines-compliance-plan.md` |
+| `../docs\planning\2026-02-15-phase5-execution-plan.md` |
+| `../docs\planning\2026-02-15-phase4-execution-plan.md` |
+| `../docs\planning\2026-02-15-phase3-review.md` |
+| `../docs\planning\2026-02-15-phase3-execution-plan.md` |
+| `../docs\planning\2026-02-15-master-plan.md` |
+| `../docs\planning\2026-02-15-guidelines-vs-phase4-summary.md` |
+| `../docs\planning\2026-02-15-execution-roadmap.md` |
+| `../docs\planning\PHASE2-SUMMARY.md` |
+| `../docs\planning\PHASE2-EXECUTION-PACKAGE.md` |
+| `../docs\planning\PHASE2-AGENT-HANDOFF.md` |
+| `../docs\planning\2026-02-15-phase2-review.md` |
+| `../docs\planning\2026-02-15-phase2-execution-plan.md` |
+| `../docs\planning\2026-02-15-phase1-execution-plan.md` |
+| `../docs\planning\2026-02-15-ui-delivery-plan.md` |
+| `../docs\planning\2026-02-15-timebox-plan.md` |
+| `../docs\planning\2026-02-15-testing-plan.md` |
+| `../docs\planning\2026-02-15-submission-plan.md` |
+| `../docs\planning\2026-02-15-scope-freeze-plan.md` |
+| `../docs\planning\2026-02-15-risk-contingency-plan.md` |
+| `../docs\planning\2026-02-15-prd-compliance-plan.md` |
+| `../docs\planning\2026-02-15-phase1-review.md` |
+| `../docs\planning\2026-02-15-data-contract-plan.md` |
+| `../docs\planning\2026-02-15-architecture-plan.md` |
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\planning\PHASE5-AGENT-HANDOFF.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-phase5-execution-plan.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+Exploring the project structure and key files:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\lib\types.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\lib\content\transformProjects.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "loadAndTransformProjects",
+  "path": "p:\\repos\\hiring\\roadmap-jakujobi\\src",
+  "caseInsensitive": false
+}
+```
+Result:
+
+```json
+{
+  "success": {
+    "pattern": "loadAndTransformProjects",
+    "path": "p:\\repos\\hiring\\roadmap-jakujobi\\src",
+    "outputMode": "content",
+    "workspaceResults": {
+      "p:\\repos\\hiring\\roadmap-jakujobi": {
+        "content": {
+          "matches": [
+            {
+              "file": "src\\app\\page.tsx",
+              "matches": [
+                {
+                  "lineNumber": 5,
+                  "content": " * Data is loaded at build time via loadAndTransformProjects."
+                },
+                {
+                  "lineNumber": 9,
+                  "content": "import { loadAndTransformProjects } from \"@/lib/content/transformProjects\";"
+                },
+                {
+                  "lineNumber": 24,
+                  "content": "  const result = loadAndTransformProjects({"
+                }
+              ]
+            },
+            {
+              "file": "src\\app\\matrix\\page.tsx",
+              "matches": [
+                {
+                  "lineNumber": 11,
+                  "content": "import { loadAndTransformProjects } from \"@/lib/content/transformProjects\";"
+                },
+                {
+                  "lineNumber": 16,
+                  "content": "  const result = loadAndTransformProjects({"
+                }
+              ]
+            },
+            {
+              "file": "src\\lib\\content\\transformProjects.ts",
+              "matches": [
+                {
+                  "lineNumber": 192,
+                  "content": "export function loadAndTransformProjects(options?: {"
+                }
+              ]
+            }
+          ],
+          "totalLines": 6,
+          "totalMatchedLines": 6
+        }
+      }
+    }
+  }
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "applyMatrixFilters|applyProjectFilters",
+  "path": "p:\\repos\\hiring\\roadmap-jakujobi\\src",
+  "caseInsensitive": false
+}
+```
+Result:
+
+```json
+{
+  "success": {
+    "pattern": "applyMatrixFilters|applyProjectFilters",
+    "path": "p:\\repos\\hiring\\roadmap-jakujobi\\src",
+    "outputMode": "content",
+    "workspaceResults": {
+      "p:\\repos\\hiring\\roadmap-jakujobi": {
+        "content": {
+          "matches": [
+            {
+              "file": "src\\lib\\filters\\applyMatrixFilters.ts",
+              "matches": [
+                {
+                  "lineNumber": 26,
+                  "content": "export function applyMatrixFilters("
+                }
+              ]
+            },
+            {
+              "file": "src\\components\\matrix\\MatrixPageWithFilters.tsx",
+              "matches": [
+                {
+                  "lineNumber": 16,
+                  "content": "  applyMatrixFilters,"
+                },
+                {
+                  "lineNumber": 18,
+                  "content": "} from \"@/lib/filters/applyMatrixFilters\";"
+                },
+                {
+                  "lineNumber": 43,
+                  "content": "    () =&gt; applyMatrixFilters(projects, filters),"
+                }
+              ]
+            },
+            {
+              "file": "src\\components\\matrix\\MatrixFilters.tsx",
+              "matches": [
+                {
+                  "lineNumber": 15,
+                  "content": "} from \"@/lib/filters/applyMatrixFilters\";"
+                }
+              ]
+            }
+          ],
+          "totalLines": 5,
+          "totalMatchedLines": 5
+        }
+      }
+    }
+  }
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\app\layout.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\package.json</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\_content\projects\PRJ-001.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\lib\filters\applyMatrixFilters.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\app\page.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "undefined" • **24** results in **1** directory</summary>
+
+Directory: **p:\repos\hiring\roadmap-jakujobi\src** (24 files)
+
+| File |
+|------|
+| `../src\lib\hooks\useProjects.ts` |
+| `../src\lib\filters\applyMatrixFilters.ts` |
+| `../src\contexts\MatrixContext.tsx` |
+| `../src\components\matrix\QuadrantOverlay.tsx` |
+| `../src\components\matrix\ProjectModal.tsx` |
+| `../src\components\matrix\MatrixTooltip.tsx` |
+| `../src\components\matrix\MatrixPageWithFilters.tsx` |
+| `../src\components\matrix\MatrixPageClient.tsx` |
+| `../src\components\matrix\MatrixFilters.tsx` |
+| `../src\components\matrix\MatrixChart.tsx` |
+| `../src\components\dashboard\StatusBreakdown.tsx` |
+| `../src\components\dashboard\PhaseDistribution.tsx` |
+| `../src\components\dashboard\MetricCard.tsx` |
+| `../src\app\page.tsx` |
+| `../src\app\matrix\page.tsx` |
+| `../src\lib\validation\projectSchema.ts` |
+| `../src\lib\content\transformProjects.ts` |
+| `../src\lib\content\loadProjects.ts` |
+| `../src\lib\content\loadConfig.ts` |
+| `../src\lib\types.ts` |
+| `../src\lib\governance\matrix.ts` |
+| `../src\app\layout.tsx` |
+| `../src\app\globals.css` |
+| `../src\lib\.gitkeep` |
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1 | tail -30</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1 | tail -30
+```
+
+```
+tail: C:\Users\ja\AppData\Local\Temp\ps-script-9518021c-44b8-4b16-8c0a-6a3006db1f08.ps1:7
+Line |
+   7 |  . p:\repos\hiring\roadmap-jakujobi &amp;&amp; npm test -- --run 2&gt;&amp;1 | tail -30
+     |                                                                 ~~~~
+     | The term 'tail' is not recognized as a name of a cmdlet, function, script file, or executable program. Check the
+     | spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 test
+&gt; vitest --run
+
+
+ RUN  v1.6.1 P:/repos/hiring/roadmap-jakujobi
+
+ ✓ tests/unit/validation/projectSchema.test.ts  (26 tests) 17ms
+ ✓ tests/unit/governance/matrix.quadrant.test.ts  (17 tests) 2ms
+ ✓ tests/unit/governance/matrix.normalize.test.ts  (11 tests) 5ms
+ ✓ tests/unit/filters/applyMatrixFilters.test.ts  (11 tests) 4ms
+ ✓ tests/integration/content/loadProjects.test.ts  (8 tests) 11ms
+ ✓ tests/integration/content/loadConfig.test.ts  (5 tests) 3ms
+ ✓ tests/integration/content/transformProjects.test.ts  (15 tests) 36ms
+ ✓ tests/unit/dashboard/MetricCard.test.tsx  (3 tests) 30ms
+ ✓ tests/unit/matrix/QuadrantOverlay.test.tsx  (4 tests) 36ms
+ ✓ tests/unit/dashboard/StatusBreakdown.test.tsx  (3 tests) 28ms
+ ✓ tests/unit/matrix/MatrixTooltip.test.tsx  (8 tests) 93ms
+ ✓ tests/unit/dashboard/PhaseDistribution.test.tsx  (3 tests) 41ms
+ ✓ tests/unit/matrix/MatrixFilters.test.tsx  (4 tests) 69ms
+ ✓ tests/unit/matrix/MatrixChart.test.tsx  (5 tests) 41ms
+ ✓ tests/unit/accessibility/keyboard-nav.test.tsx  (2 tests) 76ms
+ ✓ tests/unit/accessibility/aria-labels.test.tsx  (3 tests) 74ms
+ ✓ tests/integration/dashboard/home-page.integration.test.tsx  (3 tests) 104ms
+ ✓ tests/unit/hooks/useProjects.test.tsx  (4 tests) 287ms
+ ✓ tests/integration/matrix/matrix-page.integration.test.tsx  (4 tests) 101ms
+ ✓ tests/unit/matrix/ProjectModal.test.tsx  (1 test) 12ms
+
+ Test Files  20 passed (20)
+      Tests  140 passed (140)
+   Start at  18:36:31
+   Duration  2.52s (transform 1.89s, setup 3.17s, collect 8.17s, tests 1.07s, environment 12.63s, prepare 3.67s)
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; renders strategy matrix heading
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; loads and displays projects from _content
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; displays quadrant count stats or labels
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; shows tip for hover and click interaction
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+
+```
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Mapping date fields**
+
+I'm mapping dates.planned_start and dates.planned_end to start_date and end_date for the Gantt chart. </details></think>
+
+---
+
+
+Creating the task list and starting Phase 5 implementation:
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [-] Track A: Gantt timeline (scale, grouping, components, roadmap page)
+- [ ] Track B: Project library with search (Fuse.js), filters, detail pages
+- [ ] Track C: GlobalSearch in header, ActivityFeed on dashboard
+- [ ] Track D: Loading states, error boundaries, SEO meta tags
+- [ ] Update docs (changelog, execution roadmap, phase5 review)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="mcp-dart-user-dart-add_roots">
+<details>
+<summary>Tool use: **mcp-dart-user-dart-add_roots**</summary>
+
+
+Parameters:
+
+```json
+{
+  "tools": [
+    {
+      "name": "add_roots",
+      "parameters": "{\"roots\":[{\"uri\":\"file:///p:/repos/hiring/roadmap-jakujobi\"}]}",
+      "serverName": "dart"
+    }
+  ]
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "result": "{\"content\":[{\"type\":\"text\",\"text\":\"Success\"}]}"
+}
+```
+User decision: **accepted**
+
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm install fuse.js --save</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm install fuse.js --save
+```
+
+```
+
+added 1 package, and audited 425 packages in 2s
+
+105 packages are looking for funding
+  run &#96;npm fund&#96; for details
+
+6 vulnerabilities (5 moderate, 1 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run &#96;npm audit&#96; for details.
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\lib\gantt\calculateTimelineScale.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\lib\gantt\groupProjects.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\roadmap\GanttBar.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\roadmap\TimelineAxis.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\roadmap\TodayMarker.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\roadmap\GroupingSelector.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\roadmap\GanttChart.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\roadmap\page.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\roadmap\RoadmapClient.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Adding filter logic**
+
+I'm creating filterProjects function that reuses matrix filter logic for departments, phases, and statuses. </details></think>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm run build 2>&1</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm run build 2>&1
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 build
+&gt; next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/6) ...
+   Generating static pages (1/6) 
+   Generating static pages (2/6) 
+   Generating static pages (4/6) 
+ ✓ Generating static pages (6/6)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    175 B          96.3 kB
+├ ○ /_not-found                          873 B          88.3 kB
+├ ○ /matrix                              105 kB          193 kB
+└ ○ /roadmap                             2.36 kB        98.5 kB
++ First Load JS shared by all            87.5 kB
+  ├ chunks/117-ca6614ca86e51c50.js       31.8 kB
+  ├ chunks/fd9d1056-146b2e6d649c544d.js  53.6 kB
+  └ other shared chunks (total)          2 kB
+
+
+○  (Static)  prerendered as static content
+
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Track A: Gantt timeline (scale, grouping, components, roadmap page)
+- [-] Track B: Project library with search (Fuse.js), filters, detail pages
+- [ ] Track C: GlobalSearch in header, ActivityFeed on dashboard
+- [ ] Track D: Loading states, error boundaries, SEO meta tags
+- [ ] Update docs (changelog, execution roadmap, phase5 review)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\lib\projects\searchProjects.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\lib\validation\projectSchema.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\lib\projects\sortProjects.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\lib\projects\filterProjects.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\components\matrix\MatrixFilters.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\projects\ProjectCard.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\projects\ProjectSearchBar.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\projects\ProjectFilters.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\projects\ViewToggle.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\projects\SortSelector.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\projects\page.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\projects\ProjectLibraryClient.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\projects\ProjectHero.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\projects\ProjectTabs.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\projects\ProjectSidebar.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\projects\[id]\page.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\projects\[id]\page.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Track A: Gantt timeline (scale, grouping, components, roadmap page)
+- [x] Track B: Project library with search (Fuse.js), filters, detail pages
+- [-] Track C: GlobalSearch in header, ActivityFeed on dashboard
+- [ ] Track D: Loading states, error boundaries, SEO meta tags
+- [ ] Update docs (changelog, execution roadmap, phase5 review)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\src\app\page.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Creating layout wrapper**
+
+I'm adding a header with navigation and GlobalSearch to the layout. </details></think>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\layout\GlobalSearch.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\layout\GlobalSearch.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\dashboard\ActivityFeed.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\components\layout\AppHeader.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\layout.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\page.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\page.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Track A: Gantt timeline (scale, grouping, components, roadmap page)
+- [x] Track B: Project library with search (Fuse.js), filters, detail pages
+- [x] Track C: GlobalSearch in header, ActivityFeed on dashboard
+- [-] Track D: Loading states, error boundaries, SEO meta tags
+- [ ] Update docs (changelog, execution roadmap, phase5 review)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\loading.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\error.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\matrix\loading.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\roadmap\loading.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\projects\loading.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\projects\[id]\loading.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\app\page.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm run build 2>&1</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm run build 2>&1
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 build
+&gt; next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./src/lib/projects/searchProjects.ts:10:20
+Type error: 'Fuse' only refers to a type, but is being used as a namespace here.
+
+[0m [90m  8 |[39m [36mimport[39m type { [33mProcessedProject[39m } [36mfrom[39m [32m"@/lib/types"[39m[33m;[39m[0m
+[0m [90m  9 |[39m[0m
+[0m[31m[1m&gt;[22m[39m[90m 10 |[39m [36mconst[39m fuseOptions[33m:[39m [33mFuse[39m[33m.[39m[33mIFuseOptions[39m[33m&lt;[39m[33mProcessedProject[39m[33m&gt;[39m [33m=[39m {[0m
+[0m [90m    |[39m                    [31m[1m^[22m[39m[0m
+[0m [90m 11 |[39m   keys[33m:[39m [[0m
+[0m [90m 12 |[39m     { name[33m:[39m [32m"title"[39m[33m,[39m weight[33m:[39m [35m1.0[39m }[33m,[39m[0m
+[0m [90m 13 |[39m     { name[33m:[39m [32m"id"[39m[33m,[39m weight[33m:[39m [35m0.8[39m }[33m,[39m[0m
+Next.js build worker exited with code: 1 and signal: null
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\src\lib\projects\searchProjects.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm run build 2>&1</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm run build 2>&1
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 build
+&gt; next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+unhandledRejection Error: Cannot find module './682.js'
+Require stack:
+- P:\repos\hiring\roadmap-jakujobi\.next\server\webpack-runtime.js
+- P:\repos\hiring\roadmap-jakujobi\.next\server\pages\_document.js
+- P:\repos\hiring\roadmap-jakujobi\node_modules\next\dist\server\require.js
+- P:\repos\hiring\roadmap-jakujobi\node_modules\next\dist\server\load-components.js
+- P:\repos\hiring\roadmap-jakujobi\node_modules\next\dist\build\utils.js
+- P:\repos\hiring\roadmap-jakujobi\node_modules\next\dist\build\worker.js
+- P:\repos\hiring\roadmap-jakujobi\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1453:15)
+    at P:\repos\hiring\roadmap-jakujobi\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1064:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1069:22)
+    at Module._load (node:internal/modules/cjs/loader:1239:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1553:12)
+    at mod.require (P:\repos\hiring\roadmap-jakujobi\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at __webpack_require__.f.require (P:\repos\hiring\roadmap-jakujobi\.next\server\webpack-runtime.js:198:28) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'P:\\repos\\hiring\\roadmap-jakujobi\\.next\\server\\webpack-runtime.js',
+    'P:\\repos\\hiring\\roadmap-jakujobi\\.next\\server\\pages\\_document.js',
+    'P:\\repos\\hiring\\roadmap-jakujobi\\node_modules\\next\\dist\\server\\require.js',
+    'P:\\repos\\hiring\\roadmap-jakujobi\\node_modules\\next\\dist\\server\\load-components.js',
+    'P:\\repos\\hiring\\roadmap-jakujobi\\node_modules\\next\\dist\\build\\utils.js',
+    'P:\\repos\\hiring\\roadmap-jakujobi\\node_modules\\next\\dist\\build\\worker.js',
+    'P:\\repos\\hiring\\roadmap-jakujobi\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue; npm run build 2>&1</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue; npm run build 2>&1
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 build
+&gt; next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/11) ...
+   Generating static pages (2/11) 
+   Generating static pages (5/11) 
+   Generating static pages (8/11) 
+ ✓ Generating static pages (11/11)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    176 B          96.5 kB
+├ ○ /_not-found                          876 B          88.5 kB
+├ ○ /matrix                              106 kB          193 kB
+├ ○ /projects                            2.92 kB         106 kB
+├ ● /projects/[id]                       905 B          97.3 kB
+├   ├ /projects/PRJ-001
+├   ├ /projects/PRJ-002
+├   ├ /projects/PRJ-003
+├   └ /projects/PRJ-004
+└ ○ /roadmap                             2.39 kB        98.8 kB
++ First Load JS shared by all            87.6 kB
+  ├ chunks/117-82df5e13209e3e80.js       32 kB
+  ├ chunks/fd9d1056-ca39efb90396eb24.js  53.6 kB
+  └ other shared chunks (total)          2 kB
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses getStaticProps)
+
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 test
+&gt; vitest --run
+
+
+ RUN  v1.6.1 P:/repos/hiring/roadmap-jakujobi
+
+ ✓ tests/unit/filters/applyMatrixFilters.test.ts  (11 tests) 4ms
+ ✓ tests/unit/governance/matrix.quadrant.test.ts  (17 tests) 4ms
+ ✓ tests/unit/validation/projectSchema.test.ts  (26 tests) 9ms
+ ✓ tests/unit/governance/matrix.normalize.test.ts  (11 tests) 3ms
+ ✓ tests/integration/content/loadConfig.test.ts  (5 tests) 4ms
+ ✓ tests/integration/content/loadProjects.test.ts  (8 tests) 15ms
+ ✓ tests/integration/content/transformProjects.test.ts  (15 tests) 31ms
+ ✓ tests/unit/dashboard/StatusBreakdown.test.tsx  (3 tests) 35ms
+ ✓ tests/unit/matrix/MatrixChart.test.tsx  (5 tests) 35ms
+ ✓ tests/unit/dashboard/PhaseDistribution.test.tsx  (3 tests) 37ms
+ ✓ tests/unit/matrix/QuadrantOverlay.test.tsx  (4 tests) 32ms
+ ✓ tests/unit/dashboard/MetricCard.test.tsx  (3 tests) 29ms
+ ✓ tests/unit/matrix/MatrixTooltip.test.tsx  (8 tests) 73ms
+ ✓ tests/unit/matrix/MatrixFilters.test.tsx  (4 tests) 58ms
+ ✓ tests/unit/accessibility/aria-labels.test.tsx  (3 tests) 55ms
+ ❯ tests/unit/accessibility/keyboard-nav.test.tsx  (2 tests | 1 failed) 60ms
+   ❯ tests/unit/accessibility/keyboard-nav.test.tsx &gt; Keyboard Navigation &gt; matrix CTA link is focusable on home page
+     → Unable to find an element with the text: Open Matrix View. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;main[39m
+      [33maria-label[39m=[32m"Executive Dashboard"[39m
+      [33mclass[39m=[32m"min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8"[39m
+      [33mrole[39m=[32m"main"[39m
+    [36m&gt;[39m
+      [36m&lt;div[39m
+        [33mclass[39m=[32m"max-w-7xl mx-auto"[39m
+      [36m&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h1[39m
+            [33mclass[39m=[32m"text-3xl font-bold text-gray-900"[39m
+          [36m&gt;[39m
+            [0mExecutive Dashboard[0m
+          [36m&lt;/h1&gt;[39m
+          [36m&lt;p[39m
+            [33mclass[39m=[32m"mt-2 text-gray-600"[39m
+          [36m&gt;[39m
+            [0mStrategic portfolio overview and key metrics[0m
+          [36m&lt;/p&gt;[39m
+        [36m&lt;/div&gt;[39m
+        [36m&lt;section[39m
+          [33maria-labelledby[39m=[32m"metrics-heading"[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h2[39m
+            [33mclass[39m=[32m"sr-only"[39m
+            [33mid[39m=[32m"metrics-heading"[39m
+          [36m&gt;[39m
+            [0mKey Metrics[0m
+          [36m&lt;/h2&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"[39m
+          [36m&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Total-Investment"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Total-Investment"[39m
+                  [36m&gt;[39m
+                    [0mTotal Investment[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m$9500K[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0mAcross 4 projects[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Active-Projects"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Active-Projects"[39m
+                  [36m&gt;[39m
+                    [0mActive Projects[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m1[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0mCurrently in progress[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Projected-ROI"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Projected-ROI"[39m
+                  [36m&gt;[39m
+                    [0mProjected ROI[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m$13010K[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0m1.4x multiplier[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Portfolio-Health"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Portfolio-Health"[39m
+                  [36m&gt;[39m
+                    [0mPortfolio Health[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0mStrong[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0m25% active[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+          [36m&lt;/div&gt;[39m
+        [36m&lt;/section&gt;[39m
+        [36m&lt;section[39m
+          [33maria-labelledby[39m=[32m"distributions-heading"[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h2[39m
+            [33mclass[39m=[32m"sr-only"[39m
+            [33mid[39m=[32m"distributions-heading"[39m
+          [36m&gt;[39m
+            [0mPhase and Status Distributions[0m
+          [36m&lt;/h2&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m"grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6"[39m
+          [36m&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"phase-distributio...
+ ❯ tests/integration/dashboard/home-page.integration.test.tsx  (3 tests | 1 failed) 80ms
+   ❯ tests/integration/dashboard/home-page.integration.test.tsx &gt; HomePage Integration &gt; displays distribution charts and CTA
+     → Unable to find an element with the text: Open Matrix View. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;main[39m
+      [33maria-label[39m=[32m"Executive Dashboard"[39m
+      [33mclass[39m=[32m"min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8"[39m
+      [33mrole[39m=[32m"main"[39m
+    [36m&gt;[39m
+      [36m&lt;div[39m
+        [33mclass[39m=[32m"max-w-7xl mx-auto"[39m
+      [36m&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h1[39m
+            [33mclass[39m=[32m"text-3xl font-bold text-gray-900"[39m
+          [36m&gt;[39m
+            [0mExecutive Dashboard[0m
+          [36m&lt;/h1&gt;[39m
+          [36m&lt;p[39m
+            [33mclass[39m=[32m"mt-2 text-gray-600"[39m
+          [36m&gt;[39m
+            [0mStrategic portfolio overview and key metrics[0m
+          [36m&lt;/p&gt;[39m
+        [36m&lt;/div&gt;[39m
+        [36m&lt;section[39m
+          [33maria-labelledby[39m=[32m"metrics-heading"[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h2[39m
+            [33mclass[39m=[32m"sr-only"[39m
+            [33mid[39m=[32m"metrics-heading"[39m
+          [36m&gt;[39m
+            [0mKey Metrics[0m
+          [36m&lt;/h2&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"[39m
+          [36m&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Total-Investment"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Total-Investment"[39m
+                  [36m&gt;[39m
+                    [0mTotal Investment[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m$9500K[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0mAcross 4 projects[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Active-Projects"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Active-Projects"[39m
+                  [36m&gt;[39m
+                    [0mActive Projects[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m1[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0mCurrently in progress[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Projected-ROI"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Projected-ROI"[39m
+                  [36m&gt;[39m
+                    [0mProjected ROI[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m$13010K[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0m1.4x multiplier[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Portfolio-Health"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Portfolio-Health"[39m
+                  [36m&gt;[39m
+                    [0mPortfolio Health[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0mStrong[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0m25% active[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+          [36m&lt;/div&gt;[39m
+        [36m&lt;/section&gt;[39m
+        [36m&lt;section[39m
+          [33maria-labelledby[39m=[32m"distributions-heading"[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h2[39m
+            [33mclass[39m=[32m"sr-only"[39m
+            [33mid[39m=[32m"distributions-heading"[39m
+          [36m&gt;[39m
+            [0mPhase and Status Distributions[0m
+          [36m&lt;/h2&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m"grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6"[39m
+          [36m&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"phase-distributio...
+ ✓ tests/unit/hooks/useProjects.test.tsx  (4 tests) 241ms
+ ✓ tests/integration/matrix/matrix-page.integration.test.tsx  (4 tests) 56ms
+ ✓ tests/unit/matrix/ProjectModal.test.tsx  (1 test) 8ms
+
+ Test Files  2 failed | 18 passed (20)
+      Tests  2 failed | 138 passed (140)
+   Start at  18:40:22
+   Duration  1.93s (transform 651ms, setup 2.10s, collect 4.89s, tests 869ms, environment 12.36s, prepare 3.22s)
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; renders strategy matrix heading
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; loads and displays projects from _content
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; displays quadrant count stats or labels
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; shows tip for hover and click interaction
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/dashboard/home-page.integration.test.tsx &gt; HomePage Integration &gt; displays distribution charts and CTA
+TestingLibraryElementError: Unable to find an element with the text: Open Matrix View. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;main[39m
+      [33maria-label[39m=[32m"Executive Dashboard"[39m
+      [33mclass[39m=[32m"min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8"[39m
+      [33mrole[39m=[32m"main"[39m
+    [36m&gt;[39m
+      [36m&lt;div[39m
+        [33mclass[39m=[32m"max-w-7xl mx-auto"[39m
+      [36m&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h1[39m
+            [33mclass[39m=[32m"text-3xl font-bold text-gray-900"[39m
+          [36m&gt;[39m
+            [0mExecutive Dashboard[0m
+          [36m&lt;/h1&gt;[39m
+          [36m&lt;p[39m
+            [33mclass[39m=[32m"mt-2 text-gray-600"[39m
+          [36m&gt;[39m
+            [0mStrategic portfolio overview and key metrics[0m
+          [36m&lt;/p&gt;[39m
+        [36m&lt;/div&gt;[39m
+        [36m&lt;section[39m
+          [33maria-labelledby[39m=[32m"metrics-heading"[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h2[39m
+            [33mclass[39m=[32m"sr-only"[39m
+            [33mid[39m=[32m"metrics-heading"[39m
+          [36m&gt;[39m
+            [0mKey Metrics[0m
+          [36m&lt;/h2&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"[39m
+          [36m&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Total-Investment"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Total-Investment"[39m
+                  [36m&gt;[39m
+                    [0mTotal Investment[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m$9500K[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0mAcross 4 projects[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Active-Projects"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Active-Projects"[39m
+                  [36m&gt;[39m
+                    [0mActive Projects[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m1[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0mCurrently in progress[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Projected-ROI"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Projected-ROI"[39m
+                  [36m&gt;[39m
+                    [0mProjected ROI[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m$13010K[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0m1.4x multiplier[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Portfolio-Health"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Portfolio-Health"[39m
+                  [36m&gt;[39m
+                    [0mPortfolio Health[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0mStrong[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0m25% active[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+          [36m&lt;/div&gt;[39m
+        [36m&lt;/section&gt;[39m
+        [36m&lt;section[39m
+          [33maria-labelledby[39m=[32m"distributions-heading"[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h2[39m
+            [33mclass[39m=[32m"sr-only"[39m
+            [33mid[39m=[32m"distributions-heading"[39m
+          [36m&gt;[39m
+            [0mPhase and Status Distributions[0m
+          [36m&lt;/h2&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m"grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6"[39m
+          [36m&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"phase-distributio...
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/integration/dashboard/home-page.integration.test.tsx:29:19
+     27|     expect(screen.getByText("Projects by Phase")).toBeInTheDocument();
+     28|     expect(screen.getByText("Status Overview")).toBeInTheDocument();
+     29|     expect(screen.getByText("Open Matrix View")).toBeInTheDocument();
+       |                   ^
+     30|   });
+     31| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/accessibility/keyboard-nav.test.tsx &gt; Keyboard Navigation &gt; matrix CTA link is focusable on home page
+TestingLibraryElementError: Unable to find an element with the text: Open Matrix View. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;main[39m
+      [33maria-label[39m=[32m"Executive Dashboard"[39m
+      [33mclass[39m=[32m"min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8"[39m
+      [33mrole[39m=[32m"main"[39m
+    [36m&gt;[39m
+      [36m&lt;div[39m
+        [33mclass[39m=[32m"max-w-7xl mx-auto"[39m
+      [36m&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h1[39m
+            [33mclass[39m=[32m"text-3xl font-bold text-gray-900"[39m
+          [36m&gt;[39m
+            [0mExecutive Dashboard[0m
+          [36m&lt;/h1&gt;[39m
+          [36m&lt;p[39m
+            [33mclass[39m=[32m"mt-2 text-gray-600"[39m
+          [36m&gt;[39m
+            [0mStrategic portfolio overview and key metrics[0m
+          [36m&lt;/p&gt;[39m
+        [36m&lt;/div&gt;[39m
+        [36m&lt;section[39m
+          [33maria-labelledby[39m=[32m"metrics-heading"[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h2[39m
+            [33mclass[39m=[32m"sr-only"[39m
+            [33mid[39m=[32m"metrics-heading"[39m
+          [36m&gt;[39m
+            [0mKey Metrics[0m
+          [36m&lt;/h2&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"[39m
+          [36m&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Total-Investment"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Total-Investment"[39m
+                  [36m&gt;[39m
+                    [0mTotal Investment[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m$9500K[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0mAcross 4 projects[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Active-Projects"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Active-Projects"[39m
+                  [36m&gt;[39m
+                    [0mActive Projects[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m1[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0mCurrently in progress[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Projected-ROI"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Projected-ROI"[39m
+                  [36m&gt;[39m
+                    [0mProjected ROI[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0m$13010K[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0m1.4x multiplier[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"metric-Portfolio-Health"[39m
+              [33mclass[39m=[32m"bg-white rounded-lg shadow p-6 border border-gray-200"[39m
+              [33mrole[39m=[32m"article"[39m
+            [36m&gt;[39m
+              [36m&lt;div[39m
+                [33mclass[39m=[32m"flex items-center justify-between"[39m
+              [36m&gt;[39m
+                [36m&lt;div&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"text-sm font-medium text-gray-600"[39m
+                    [33mid[39m=[32m"metric-Portfolio-Health"[39m
+                  [36m&gt;[39m
+                    [0mPortfolio Health[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-2 text-3xl font-semibold text-gray-900"[39m
+                  [36m&gt;[39m
+                    [0mStrong[0m
+                  [36m&lt;/p&gt;[39m
+                  [36m&lt;p[39m
+                    [33mclass[39m=[32m"mt-1 text-sm text-gray-500"[39m
+                  [36m&gt;[39m
+                    [0m25% active[0m
+                  [36m&lt;/p&gt;[39m
+                [36m&lt;/div&gt;[39m
+              [36m&lt;/div&gt;[39m
+            [36m&lt;/div&gt;[39m
+          [36m&lt;/div&gt;[39m
+        [36m&lt;/section&gt;[39m
+        [36m&lt;section[39m
+          [33maria-labelledby[39m=[32m"distributions-heading"[39m
+          [33mclass[39m=[32m"mb-8"[39m
+        [36m&gt;[39m
+          [36m&lt;h2[39m
+            [33mclass[39m=[32m"sr-only"[39m
+            [33mid[39m=[32m"distributions-heading"[39m
+          [36m&gt;[39m
+            [0mPhase and Status Distributions[0m
+          [36m&lt;/h2&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m"grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6"[39m
+          [36m&gt;[39m
+            [36m&lt;div[39m
+              [33maria-labelledby[39m=[32m"phase-distributio...
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/unit/accessibility/keyboard-nav.test.tsx:31:25
+     29|   it("matrix CTA link is focusable on home page", () =&gt; {
+     30|     render(&lt;HomePage /&gt;);
+     31|     const link = screen.getByText("Open Matrix View");
+       |                         ^
+     32|     expect(link).toHaveAttribute("href", "/matrix");
+     33|     link.focus();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\tests\unit\accessibility\keyboard-nav.test.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\tests\integration\dashboard\home-page.integration.test.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\tests\unit\accessibility\keyboard-nav.test.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\tests\integration\dashboard\home-page.integration.test.tsx</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 test
+&gt; vitest --run
+
+
+ RUN  v1.6.1 P:/repos/hiring/roadmap-jakujobi
+
+ ✓ tests/unit/governance/matrix.quadrant.test.ts  (17 tests) 2ms
+ ✓ tests/unit/governance/matrix.normalize.test.ts  (11 tests) 3ms
+ ✓ tests/unit/filters/applyMatrixFilters.test.ts  (11 tests) 6ms
+ ✓ tests/unit/validation/projectSchema.test.ts  (26 tests) 10ms
+ ✓ tests/integration/content/loadConfig.test.ts  (5 tests) 14ms
+ ✓ tests/integration/content/loadProjects.test.ts  (8 tests) 32ms
+ ✓ tests/integration/content/transformProjects.test.ts  (15 tests) 69ms
+ ✓ tests/unit/dashboard/StatusBreakdown.test.tsx  (3 tests) 24ms
+ ✓ tests/unit/matrix/QuadrantOverlay.test.tsx  (4 tests) 31ms
+ ✓ tests/unit/dashboard/MetricCard.test.tsx  (3 tests) 27ms
+ ✓ tests/unit/matrix/MatrixChart.test.tsx  (5 tests) 28ms
+ ✓ tests/unit/dashboard/PhaseDistribution.test.tsx  (3 tests) 36ms
+ ✓ tests/unit/matrix/MatrixTooltip.test.tsx  (8 tests) 69ms
+ ✓ tests/unit/matrix/MatrixFilters.test.tsx  (4 tests) 52ms
+ ✓ tests/unit/accessibility/aria-labels.test.tsx  (3 tests) 58ms
+ ✓ tests/unit/accessibility/keyboard-nav.test.tsx  (2 tests) 58ms
+ ✓ tests/integration/dashboard/home-page.integration.test.tsx  (3 tests) 75ms
+ ✓ tests/unit/hooks/useProjects.test.tsx  (4 tests) 242ms
+ ✓ tests/integration/matrix/matrix-page.integration.test.tsx  (4 tests) 52ms
+ ✓ tests/unit/matrix/ProjectModal.test.tsx  (1 test) 9ms
+
+ Test Files  20 passed (20)
+      Tests  140 passed (140)
+   Start at  18:40:44
+   Duration  2.00s (transform 888ms, setup 2.32s, collect 5.55s, tests 897ms, environment 12.22s, prepare 3.03s)
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; renders strategy matrix heading
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; loads and displays projects from _content
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; displays quadrant count stats or labels
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; shows tip for hover and click interaction
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(400) or use aspect(undefined) to control the
+       height and width.
+
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Track A: Gantt timeline (scale, grouping, components, roadmap page)
+- [x] Track B: Project library with search (Fuse.js), filters, detail pages
+- [x] Track C: GlobalSearch in header, ActivityFeed on dashboard
+- [x] Track D: Loading states, error boundaries, SEO meta tags
+- [-] Update docs (changelog, execution roadmap, phase5 review)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\tests\unit\gantt\calculateTimelineScale.test.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\tests\unit\gantt\groupProjects.test.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\tests\unit\projects\searchProjects.test.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\changelog.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-execution-roadmap.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\README.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\changelog.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-execution-roadmap.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-phase5-review.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\README.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1 | Select-String -Pattern "Tests|passed|failed"</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm test -- --run 2>&1 | Select-String -Pattern "Tests|passed|failed"
+```
+
+```
+
+ ✓ tests/unit/gantt/calculateTimelineScale.test.ts  (4 tests) 4ms
+ ✓ tests/unit/governance/matrix.normalize.test.ts  (11 tests) 3ms
+ ✓ tests/unit/governance/matrix.quadrant.test.ts  (17 tests) 4ms
+ ✓ tests/unit/filters/applyMatrixFilters.test.ts  (11 tests) 8ms
+ ✓ tests/unit/projects/searchProjects.test.ts  (4 tests) 5ms
+ ✓ tests/unit/validation/projectSchema.test.ts  (26 tests) 8ms
+ ✓ tests/unit/gantt/groupProjects.test.ts  (3 tests) 15ms
+ ✓ tests/integration/content/loadConfig.test.ts  (5 tests) 6ms
+ ✓ tests/integration/content/loadProjects.test.ts  (8 tests) 14ms
+ ✓ tests/integration/content/transformProjects.test.ts  (15 tests) 28ms
+ ✓ tests/unit/dashboard/StatusBreakdown.test.tsx  (3 tests) 34ms
+ ✓ tests/unit/matrix/MatrixFilters.test.tsx  (4 tests) 58ms
+ ✓ tests/unit/matrix/MatrixTooltip.test.tsx  (8 tests) 95ms
+ ✓ tests/unit/matrix/QuadrantOverlay.test.tsx  (4 tests) 40ms
+ ✓ tests/unit/matrix/MatrixChart.test.tsx  (5 tests) 41ms
+ ✓ tests/unit/accessibility/aria-labels.test.tsx  (3 tests) 52ms
+ ✓ tests/integration/dashboard/home-page.integration.test.tsx  (3 tests) 67ms
+ ✓ tests/unit/hooks/useProjects.test.tsx  (4 tests) 249ms
+ ✓ tests/integration/matrix/matrix-page.integration.test.tsx  (4 tests) 65ms
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; renders strategy matrix 
+heading
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; loads and displays 
+projects from _content
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; displays quadrant count 
+stats or labels
+stderr | tests/integration/matrix/matrix-page.integration.test.tsx &gt; Matrix Page Integration &gt; shows tip for hover and 
+click interaction
+ ✓ tests/unit/dashboard/MetricCard.test.tsx  (3 tests) 22ms
+ ✓ tests/unit/dashboard/PhaseDistribution.test.tsx  (3 tests) 31ms
+ ✓ tests/unit/matrix/ProjectModal.test.tsx  (1 test) 10ms
+ ✓ tests/unit/accessibility/keyboard-nav.test.tsx  (2 tests) 48ms
+ Test Files  23 passed (23)
+      Tests  151 passed (151)
+   Duration  2.40s (transform 981ms, setup 3.27s, collect 5.86s, tests 907ms, environment 14.48s, prepare 4.86s)
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\changelog.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-execution-roadmap.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-phase5-review.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Track A: Gantt timeline (scale, grouping, components, roadmap page)
+- [x] Track B: Project library with search (Fuse.js), filters, detail pages
+- [x] Track C: GlobalSearch in header, ActivityFeed on dashboard
+- [x] Track D: Loading states, error boundaries, SEO meta tags
+- [x] Update docs (changelog, execution roadmap, phase5 review)
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-master-plan.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-master-plan.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+Invalid arguments
+
+---
+
+
+
+
+
+---
+
+The string to replace was not found in the file.
+
+---
+
+The string to replace was not found in the file.
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\planning\2026-02-15-master-plan.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd p:\repos\hiring\roadmap-jakujobi && npm run build 2>&1</summary>
+
+```bash
+cd p:\repos\hiring\roadmap-jakujobi && npm run build 2>&1
+```
+
+```
+
+&gt; roadmap-engine@0.1.0 build
+&gt; next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/11) ...
+   Generating static pages (2/11) 
+   Generating static pages (5/11) 
+   Generating static pages (8/11) 
+ ✓ Generating static pages (11/11)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    176 B          96.5 kB
+├ ○ /_not-found                          876 B          88.5 kB
+├ ○ /matrix                              106 kB          193 kB
+├ ○ /projects                            2.92 kB         106 kB
+├ ● /projects/[id]                       905 B          97.3 kB
+├   ├ /projects/PRJ-001
+├   ├ /projects/PRJ-002
+├   ├ /projects/PRJ-003
+├   └ /projects/PRJ-004
+└ ○ /roadmap                             2.39 kB        98.8 kB
++ First Load JS shared by all            87.6 kB
+  ├ chunks/117-82df5e13209e3e80.js       32 kB
+  ├ chunks/fd9d1056-ca39efb90396eb24.js  53.6 kB
+  └ other shared chunks (total)          2 kB
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses getStaticProps)
+
+
+```
+</details>
+</tool-use>
+
+---
+
+
+Phase 5 is complete. Summary of changes:
+
+## Phase 5 Implementation Summary
+
+### Track A: Roadmap Gantt View
+- **`/roadmap` route** – SVG Gantt chart with:
+  - Grouping by department, status, phase, or none
+  - Status-based colors (Active=green, Queued=blue, etc.)
+  - Today marker when in range
+  - Timeline axis with month labels
+- New files: `src/lib/gantt/`, `src/components/roadmap/`, `src/app/roadmap/`
+
+### Track B: Project Library & Detail Pages
+- **`/projects`** – Searchable project list with:
+  - Fuse.js search (PRD 7.1)
+  - Sidebar filters (department, phase, status)
+  - Card/table toggle and sorting
+- **`/projects/[id]`** – Detail pages (PRJ-001–PRJ-004) with SSG
+- New files: `src/lib/projects/`, `src/components/projects/`, `src/app/projects/`
+
+### Track C: Activity Feed & Search
+- **GlobalSearch** – Header search with live results dropdown
+- **ActivityFeed** – Recent activity on the dashboard
+- **AppHeader** – Nav links (Dashboard, Matrix, Roadmap, Projects) and search
+
+### Track D: Production Hardening
+- `loading.tsx` for `/`, `/matrix`, `/roadmap`, `/projects`, `/projects/[id]`
+- Root `error.tsx` error boundary
+- Layout metadata (title, description, keywords, Open Graph)
+
+### Documentation Updates
+- **`docs/changelog.md`** – Phase 5 changelog
+- **`docs/planning/2026-02-15-execution-roadmap.md`** – Phase 5 section marked done
+- **`docs/planning/2026-02-15-phase5-review.md`** – Phase 5 review
+- **`docs/planning/2026-02-15-master-plan.md`** – Phase 5 status updated
+- **`README.md`** – Route list updated
+
+### Test Results
+- **151 tests passing** (was 140, +11)
+- **Build succeeds** with static export and 4 project detail pages
+- Tests adjusted for new CTA labels (“Matrix View” instead of “Open Matrix View”)
+
+---
+
+_**User**_
+
+Please update the journal too.
+
+---
+
+_**Agent (model composer-1.5, mode Agent)**_
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\JOURNAL.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\JOURNAL.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+Updated `JOURNAL.md` with a Phase 5 entry that includes:
+- Track A–D implementations
+- New Fuse.js dependency
+- Dashboard CTA changes
+- Test changes (11 new, 2 updated)
+- Final test count (151)
+- Documentation updates
+
+---
+
