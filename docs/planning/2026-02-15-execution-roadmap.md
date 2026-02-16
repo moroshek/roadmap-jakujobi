@@ -163,41 +163,108 @@ Fallback if blocked:
 
 ### P3 - Matrix UI Core (100-135 min)
 
+**Detailed Plan:** See `docs/planning/2026-02-15-phase3-execution-plan.md` for the full agent-ready implementation guide.
+
 Purpose:
 
-- Deliver the pass/fail feature at `/matrix`.
+- Deliver the **critical pass/fail requirement**: functional Strategy Matrix at `/matrix` route.
+- Build interactive scatter plot with enhanced interactions (hover + click-to-modal).
+- Implement mobile-responsive design with WCAG 2.1 AA accessibility.
+- Achieve comprehensive automated test coverage (unit + integration).
 
 Files to create/update:
 
-- `src/app/matrix/page.tsx`
-- `src/components/matrix/StrategyMatrix.tsx`
-- `src/components/matrix/MatrixTooltip.tsx`
-- `src/components/matrix/QuadrantOverlay.tsx`
-- `tests/integration/matrix/matrix-page.integration.test.tsx`
+**Foundation (5 min):**
+- `src/lib/hooks/useProjects.ts` (data fetching hook connecting to P2 pipeline)
+- `src/contexts/MatrixContext.tsx` (React Context for state management)
+
+**Core Components (18 min):**
+- `src/components/matrix/MatrixChart.tsx` (Recharts scatter chart with interaction handlers)
+- `src/components/matrix/QuadrantOverlay.tsx` (SVG background zones with semantic colors)
+- `src/components/matrix/MatrixTooltip.tsx` (hover tooltip with title + quadrant + ROI)
+- `src/components/matrix/ProjectModal.tsx` (click-to-expand modal with full project details)
+
+**Page Integration (5 min):**
+- `src/app/matrix/page.tsx` (main page with loading/error/empty states)
+
+**Testing (12 min):**
+- `src/components/matrix/MatrixChart.test.tsx` (unit tests for chart component)
+- `src/components/matrix/QuadrantOverlay.test.tsx` (unit tests for overlay)
+- `src/components/matrix/MatrixTooltip.test.tsx` (unit tests for tooltip)
+- `src/components/matrix/ProjectModal.test.tsx` (unit tests for modal)
+- `src/lib/hooks/useProjects.test.tsx` (unit tests for data hook)
+- `tests/integration/matrix/matrix-page.integration.test.tsx` (end-to-end integration test)
+
+**Expected test count:** 36+ new tests (target: 113+ total with P1+P2)
 
 Implementation notes:
 
-- Use Recharts ScatterChart.
-- Axis mapping: `x = effortNormalized`, `y = impactNormalized`.
-- Add quadrant visuals/labels and central split at 50.
-- Tooltip must include: title + quadrant label (and ROI).
+- **Chart library:** Recharts (already installed, React-friendly, declarative API)
+- **Axis mapping:** `x = effortNormalized` (0-100), `y = impactNormalized` (0-100)
+- **Quadrant boundaries:** Split at x=50, y=50 per PRD Section 2.1
+- **Interactions:** 
+  - Hover: Show tooltip with project title, quadrant label, and ROI
+  - Click: Open modal overlay with full project details
+  - Highlight: Selected/hovered points use larger size and full opacity
+- **Color scheme:** Brand-based with semantic hints (green=Quick Wins, blue=Big Bets, gray=Fillers, amber=Time Sinks)
+- **State management:** React Context (MatrixContext) to share selected/hovered state across components
+- **Data flow:** Client-side `useProjects()` hook calls `loadAndTransformProjects()` from P2 pipeline
+- **Loading states:** Skeleton loader with spinner animation during data fetch
+- **Error handling:** Error display with retry button, empty state with helpful message
+- **Responsive:** Mobile-friendly breakpoints, touch-friendly tap targets (44px min)
+- **Accessibility:** WCAG 2.1 AA compliance (keyboard nav, ARIA labels, focus indicators, screen reader support)
+- **Animations:** Subtle fade-in on load, smooth hover transitions (200-300ms)
 
 Commands/validation:
 
-- `npm run dev` and manual interaction test on `/matrix`
-- Checklist:
-  - chart renders
-  - 4 points visible
-  - tooltip content correct
-  - quadrant position correctness matches PRD rules
+- `npm run test` (should show 113+ passing tests: 50 P1 + 27 P2 + 36+ P3)
+- `npm run test:coverage` (target: >85% coverage for Phase 3 files)
+- `npm run build` (must succeed with no errors)
+- `npm run dev` and manual interaction test on `/matrix`:
+  - Chart renders with all 4 seeded projects visible
+  - Axes labeled correctly (Effort/Complexity on X, Impact/Strategic Value on Y)
+  - Quadrant zones visible with labels (Quick Wins, Big Bets, Fillers, Time Sinks)
+  - Tooltip shows on hover with title + quadrant + ROI
+  - Click opens modal with comprehensive project details
+  - Modal closes with Escape key or close button
+  - Loading skeleton appears briefly during initial load
+  - No console errors in browser devtools
+
+Manual validation checklist:
+
+- [ ] PRJ-001 (86, 32) displays in Quick Wins quadrant (top-left)
+- [ ] PRJ-002 (91, 82) displays in Big Bets quadrant (top-right)
+- [ ] PRJ-003 (39, 28) displays in Fillers quadrant (bottom-left)
+- [ ] PRJ-004 (41, 87) displays in Time Sinks quadrant (bottom-right)
+- [ ] Tooltip shows formatted ROI (e.g., "$120,000" not "120000")
+- [ ] Modal shows all project metadata (owner, department, phase, dates, scores, financials, tags)
+- [ ] Keyboard navigation works (Tab to focus, Enter/Space to activate, Escape to close modal)
+- [ ] Mobile responsive (test at 320px, 768px, 1280px widths)
+- [ ] Touch interactions work on mobile device or browser touch emulation
 
 Exit gate:
 
-- All must-have UI behavior is complete and verified.
+- All must-have UI behavior is complete and verified:
+  - ✅ Route `/matrix` renders without error
+  - ✅ Scatter plot displays with correct axes and scale
+  - ✅ All 4 projects render as points in correct quadrants
+  - ✅ Quadrant zones visible with proper labels
+  - ✅ Tooltip shows required fields (title + quadrant + ROI)
+  - ✅ Interactive (hover + click work)
+  - ✅ Unit tests pass (36+ new tests)
+  - ✅ Integration test passes
+  - ✅ Build succeeds
+  - ✅ No blocking console errors
 
 Fallback if blocked:
 
-- Keep chart simple (no animation), prioritize correctness and tooltip fields.
+- If time reaches minute 130 without completion:
+  1. **Drop:** Click-to-modal interaction (keep hover tooltip only)
+  2. **Drop:** Integration tests (rely on unit tests + manual QA)
+  3. **Drop:** Subtle animations (use instant state changes)
+  4. **Keep:** All core chart functionality (axes, points, quadrants, tooltip)
+  5. **Keep:** Loading and error states
+  6. **Keep:** Unit tests for critical components
 
 ---
 
