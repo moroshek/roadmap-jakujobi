@@ -10,6 +10,7 @@ import { loadAndTransformProjects } from "@/lib/content/transformProjects";
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { PhaseDistribution } from "@/components/dashboard/PhaseDistribution";
 import { StatusBreakdown } from "@/components/dashboard/StatusBreakdown";
+import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
 
 function getPhaseColor(phase: string): string {
   const colors: Record<string, string> = {
@@ -128,6 +129,16 @@ export default function HomePage() {
         </section>
 
         <section
+          aria-labelledby="activity-heading"
+          className="mb-8"
+        >
+          <h2 id="activity-heading" className="sr-only">
+            Recent Activity
+          </h2>
+          <ActivityFeed projects={projects} />
+        </section>
+
+        <section
           className="bg-blue-50 border border-blue-200 rounded-lg p-6"
           aria-labelledby="cta-heading"
         >
@@ -135,18 +146,32 @@ export default function HomePage() {
             id="cta-heading"
             className="text-xl font-semibold text-blue-900 mb-2"
           >
-            Explore Strategy Matrix
+            Explore Portfolio
           </h2>
           <p className="text-blue-700 mb-4">
-            Visualize your portfolio on the Impact vs. Effort matrix to identify
-            Quick Wins and Big Bets.
+            Visualize your portfolio on the Impact vs. Effort matrix, explore the
+            timeline roadmap, or browse the project library.
           </p>
-          <Link
-            href="/matrix"
-            className="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-[44px] min-w-[44px]"
-          >
-            Open Matrix View
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/matrix"
+              className="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-[44px] min-w-[44px]"
+            >
+              Matrix View
+            </Link>
+            <Link
+              href="/roadmap"
+              className="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-[44px] min-w-[44px]"
+            >
+              Roadmap
+            </Link>
+            <Link
+              href="/projects"
+              className="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-[44px] min-w-[44px]"
+            >
+              Projects
+            </Link>
+          </div>
         </section>
       </div>
     </main>

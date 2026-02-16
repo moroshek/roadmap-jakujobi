@@ -7,13 +7,13 @@
 import Fuse from "fuse.js";
 import type { ProcessedProject } from "@/lib/types";
 
-const fuseOptions: Fuse.IFuseOptions<ProcessedProject> = {
+const fuseOptions = {
   keys: [
-    { name: "title", weight: 1.0 },
-    { name: "id", weight: 0.8 },
-    { name: "tags", weight: 0.6 },
-    { name: "owner", weight: 0.4 },
-    { name: "department", weight: 0.3 },
+    { name: "title" as const, weight: 1.0 },
+    { name: "id" as const, weight: 0.8 },
+    { name: "tags" as const, weight: 0.6 },
+    { name: "owner" as const, weight: 0.4 },
+    { name: "department" as const, weight: 0.3 },
   ],
   threshold: 0.3,
   includeScore: true,

@@ -28,7 +28,7 @@ describe("Keyboard Navigation", () => {
 
   it("matrix CTA link is focusable on home page", () => {
     render(<HomePage />);
-    const link = screen.getByText("Open Matrix View");
+    const link = screen.getByText("Matrix View");
     expect(link).toHaveAttribute("href", "/matrix");
     link.focus();
     expect(document.activeElement).toBe(link);
