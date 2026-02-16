@@ -4,7 +4,7 @@
 
 # Project documentation and submission checklist (2026-02-16 00:43Z)
 
-_**User (2026-02-16 00:45Z)**_
+_**User (2026-02-16 00:43Z)**_
 
 Go through and check what documentation do I need to do? What else do we need to do in this project before submitting? What things do we need to make? What are the guides and other things? 
 

@@ -26,6 +26,6 @@ describe("HomePage Integration", () => {
     render(<HomePage />);
     expect(screen.getByText("Projects by Phase")).toBeInTheDocument();
     expect(screen.getByText("Status Overview")).toBeInTheDocument();
-    expect(screen.getByText("Open Matrix View")).toBeInTheDocument();
+    expect(screen.getByText("Matrix View")).toBeInTheDocument();
   });
 });

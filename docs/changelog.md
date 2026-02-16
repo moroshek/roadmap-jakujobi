@@ -4,6 +4,17 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+### Added
+- 2026-02-15: Phase 5 Extended Features & Production Hardening (COMPLETED)
+  - Track A - Roadmap Gantt View: `/roadmap` route with SVG-based timeline, grouping by department/status/phase, today marker, status-colored bars
+  - Track B - Project Library & Detail: `/projects` searchable catalog with Fuse.js fuzzy search, filters, card/table toggle, sort; `/projects/[id]` dynamic detail pages with SSG
+  - Track C - Activity Feed & Search: GlobalSearch in header (all pages), ActivityFeed on dashboard, live search dropdown
+  - Track D - Production Hardening: loading.tsx for all routes, error.tsx boundary, enhanced SEO meta tags in layout
+  - New files: 11 Gantt (scale, grouping, chart, bar, axis, marker, selector), 14 projects (library, detail, card, search, filters, hero, tabs, sidebar), 3 layout/search/feed
+  - New dependency: fuse.js for fuzzy search (PRD 7.1)
+  - Dashboard CTA updated: Matrix View, Roadmap, Projects links
+  - Tests: 11 new unit tests (gantt scale, grouping, search), 151 total passing; build succeeds; all 4 project detail pages statically generated
+
 ### Fixed
 - 2026-02-15: Ctrl+R on /matrix causing webpack cache ENOENT and 404s
   - Added `npm run dev:clean` - clears `.next` cache and starts dev server
