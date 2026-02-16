@@ -66,6 +66,14 @@ Then open [http://localhost:3000](http://localhost:3000).
 
 Build for production: `npm run build`
 
+### **3.0.1 Documentation**
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Development setup, code style, testing, PR process
+- [docs/API.md](docs/API.md) - Component APIs, library functions, data schema
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) - Data pipeline, component hierarchy
+- [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) - Production build, static hosting, env config
+- [docs/USER-GUIDE.md](docs/USER-GUIDE.md) - How to use each view, filters, matrix interpretation
+
 ## **3.1 Starter Dataset (AutoNova Motors Synthetic Content)**
 
 To reduce setup overhead and keep the assessment focused on implementation quality, this repository includes starter synthetic content for a car manufacturer tenant:

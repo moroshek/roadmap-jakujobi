@@ -5,6 +5,13 @@ All notable changes to this project are documented in this file.
 ## [Unreleased]
 
 ### Added
+- 2026-02-15: Project documentation suite
+  - CONTRIBUTING.md - Development setup, code style guide, testing requirements, PR process, extension guide
+  - docs/API.md - Key component APIs, library functions reference, data schema reference
+  - docs/ARCHITECTURE.md - Data pipeline flowchart, component hierarchy, build/runtime separation
+  - docs/DEPLOYMENT.md - Production build steps, static hosting instructions, environment configuration
+  - docs/USER-GUIDE.md - How to use each view, filter/search instructions, Strategy Matrix quadrant interpretation guide
+
 - 2026-02-15: Phase 5 Extended Features & Production Hardening (COMPLETED)
   - Track A - Roadmap Gantt View: `/roadmap` route with SVG-based timeline, grouping by department/status/phase, today marker, status-colored bars
   - Track B - Project Library & Detail: `/projects` searchable catalog with Fuse.js fuzzy search, filters, card/table toggle, sort; `/projects/[id]` dynamic detail pages with SSG
