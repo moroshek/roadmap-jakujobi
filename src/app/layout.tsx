@@ -1,9 +1,17 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
+import { AppHeader } from "@/components/layout/AppHeader";
 
 export const metadata: Metadata = {
-  title: 'Roadmap Engine',
-  description: 'Strategic roadmap visualization platform',
+  title: "Roadmap Engine - Strategic Portfolio Management",
+  description:
+    "Enterprise roadmap visualization and portfolio governance platform",
+  keywords: ["roadmap", "portfolio management", "strategy matrix", "gantt chart"],
+  openGraph: {
+    title: "Roadmap Engine",
+    description: "Strategic Portfolio Management Platform",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -13,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="min-h-screen bg-gray-50">
+        <AppHeader />
+        {children}
+      </body>
     </html>
   );
 }

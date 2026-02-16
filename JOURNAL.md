@@ -339,6 +339,36 @@
 - [NOTE] ResizeObserver mock added to tests/setup.ts for Recharts in jsdom
 - [DECISION] Phase 3 APPROVED - ready for Phase 4 Bonus Features
 
+## 2026-02-16 Phase 5 Extended Features & Production Hardening (COMPLETED)
+
+- [ADD] Track A - Roadmap Gantt View
+  - `/roadmap` route with SVG-based timeline chart
+  - calculateTimelineScale, groupProjects utilities (dates.planned_start/planned_end)
+  - GanttChart, GanttBar, TimelineAxis, TodayMarker, GroupingSelector
+  - Grouping by department, status, phase, or none; status-colored bars
+- [ADD] Track B - Project Library & Detail Pages
+  - `/projects` library with Fuse.js fuzzy search (PRD 7.1)
+  - searchProjects, sortProjects, filterProjects (reuses applyMatrixFilters)
+  - ProjectCard, ProjectSearchBar, ProjectFilters, ViewToggle, SortSelector
+  - `/projects/[id]` dynamic routes with generateStaticParams (SSG for PRJ-001 to PRJ-004)
+  - ProjectHero, ProjectTabs, ProjectSidebar on detail pages
+- [ADD] Track C - Activity Feed & Search
+  - AppHeader with nav links (Dashboard, Matrix, Roadmap, Projects)
+  - GlobalSearch in header - live dropdown, navigates to project detail
+  - ActivityFeed on dashboard - synthetic activities from project dates
+- [ADD] Track D - Production Hardening
+  - loading.tsx for /, /matrix, /roadmap, /projects, /projects/[id]
+  - error.tsx root error boundary
+  - Enhanced layout metadata (title, description, keywords, Open Graph)
+- [ADD] New dependency: fuse.js
+- [UPDATE] Dashboard CTA: Matrix View, Roadmap, Projects (3 links)
+- [UPDATE] 2 tests for new CTA text (keyboard-nav, home-page integration)
+- [ADD] 11 new unit tests: gantt scale (4), grouping (3), search (4)
+- [NOTE] Test Results: 151/151 tests passing (140 baseline + 11 new)
+- [NOTE] Build: npm run build succeeds; 11 routes including 4 project detail pages
+- [ADD] docs/planning/2026-02-15-phase5-review.md
+- [UPDATE] changelog, execution roadmap, master plan, README
+
 ## 2026-02-15 Phase 4 Bonus Features & Polish (COMPLETED)
 
 - [ADD] Executive Dashboard (Feature Area A)

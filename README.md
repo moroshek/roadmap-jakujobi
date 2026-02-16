@@ -55,7 +55,14 @@ npm install
 npm run dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000). The `/matrix` route is available at [http://localhost:3000/matrix](http://localhost:3000/matrix).
+Then open [http://localhost:3000](http://localhost:3000).
+
+**Routes:**
+- `/` - Executive dashboard (metrics, phase/status charts, activity feed)
+- `/matrix` - Strategy Matrix scatter plot (Impact vs Effort, quadrant overlay)
+- `/roadmap` - Gantt timeline view with grouping
+- `/projects` - Project library with fuzzy search and filters
+- `/projects/[id]` - Project detail pages (e.g., /projects/PRJ-001)
 
 Build for production: `npm run build`
 
