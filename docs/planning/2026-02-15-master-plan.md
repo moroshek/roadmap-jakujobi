@@ -22,6 +22,16 @@ Primary execution source of truth: `docs/planning/2026-02-15-execution-roadmap.m
 | Phase 1 Review | `2026-02-15-phase1-review.md` | Phase 1 completion review and validation | ✅ Complete |
 | Phase 2 Execution | `2026-02-15-phase2-execution-plan.md` | Detailed P2 Data Pipeline plan (agent-ready, 27 integration tests) | ✅ Complete |
 | Phase 2 Review | `2026-02-15-phase2-review.md` | Phase 2 completion review and validation | ✅ Complete |
+| Phase 3 Execution | `2026-02-15-phase3-execution-plan.md` | Detailed P3 Matrix UI plan (12 files, 36+ tests, complete code examples) | ✅ Complete |
+| Phase 3 Handoff | `PHASE3-AGENT-HANDOFF.md` | Quick-start guide for agents executing Phase 3 | ✅ Complete |
+| Phase 3 Summary | `PHASE3-SUMMARY.md` | Phase 3 planning package overview (400+ lines) | ✅ Complete |
+| Phase 3 Review | `2026-02-15-phase3-review.md` | Phase 3 completion review and validation | ✅ Complete |
+| Phase 4 Execution | `2026-02-15-phase4-execution-plan.md` | Detailed P4 Bonus Features plan (18 files, 32+ tests, 3 feature areas) | 🎯 Ready |
+| Phase 4 Handoff | `PHASE4-AGENT-HANDOFF.md` | Quick-start guide for agents executing Phase 4 | 🎯 Ready |
+| Phase 4 Summary | `PHASE4-SUMMARY.md` | Phase 4 planning package overview (1200+ lines) | 🎯 Ready |
+| Phase 5 Execution | `2026-02-15-phase5-execution-plan.md` | Detailed P5 Extended Features plan (33 files, 71+ tests, 4 feature tracks) | 🎯 Ready |
+| Phase 5 Handoff | `PHASE5-AGENT-HANDOFF.md` | Quick-start guide for agents executing Phase 5 | 🎯 Ready |
+| Phase 5 Summary | `PHASE5-SUMMARY.md` | Phase 5 planning package overview (3100+ lines) | 🎯 Ready |
 | PRD Compliance | `2026-02-15-prd-compliance-plan.md` | Map requirements to implementation | ✅ Approved |
 | Scope Freeze | `2026-02-15-scope-freeze-plan.md` | Define in/out of scope | ✅ Approved |
 | Architecture | `2026-02-15-architecture-plan.md` | Data flow & structure | ✅ Approved |
@@ -43,11 +53,19 @@ Primary execution source of truth: `docs/planning/2026-02-15-execution-roadmap.m
 4. Quadrant assignment logic
 5. Tooltip: Title + Quadrant + ROI
 
-### Bonus Items (Priority Order)
-1. Dashboard metric cards
-2. Department + Phase filters
-3. Responsive layout
-4. Unit tests
+### Bonus Items (Phase 4 - Completed/In Progress)
+1. ✅ Dashboard metric cards
+2. ✅ Department + Phase filters
+3. ✅ Responsive layout
+4. ✅ Unit tests (140+ passing)
+
+### Extended Features (Phase 5 - Planned)
+1. 🎯 Roadmap Gantt timeline view (`/roadmap`)
+2. 🎯 Project library with search (`/projects`)
+3. 🎯 Project detail pages (`/projects/[id]`)
+4. 🎯 Global search functionality
+5. 🎯 Activity feed and updates stream
+6. 🎯 Production hardening (SEO, loading states, error boundaries)
 
 ### Key Files
 - Logic: `src/lib/governance/matrix.ts`
@@ -61,14 +79,25 @@ npm run test:unit     # Unit tests only
 npm run test:watch   # Watch mode
 ```
 
-### Time Budget
-- Phase 1 (Foundation): 30 min
-- Phase 2 (Core Logic): 30 min
-- Phase 3 (Matrix UI): 50 min
-- Phase 4 (Polish): 30 min
-- Phase 5 (Testing): 25 min
-- Phase 6 (Submission): 15 min
-- **Total: 180 min**
+### Time Budget (Original Plan)
+- Phase 1 (Core Logic / TDD): 50 min ✅
+- Phase 2 (Data Pipeline): 25 min ✅
+- Phase 3 (Matrix UI): 35 min ✅
+- Phase 4 (Dashboard + Filters): 25 min ✅
+- Phase 5 (Hardening + Submit): 20 min
+- **Original Total: 155 min** (within 180 min budget)
+
+### Expanded Time Budget (With Phase 5 Extended Features)
+- Phase 1 (Core Logic / TDD): 50 min ✅
+- Phase 2 (Data Pipeline): 25 min ✅
+- Phase 3 (Matrix UI): 35 min ✅
+- Phase 4 (Dashboard + Filters): 25 min ⏳ (in progress)
+- Phase 5 (Extended Features): 80 min 🎯 (planned)
+  - Track A: Gantt Timeline (30 min)
+  - Track B: Project Library + Detail (25 min)
+  - Track C: Search + Activity Feed (15 min)
+  - Track D: Production Hardening (10 min)
+- **Extended Total: 215 min** (requires extended timeline)
 
 ---
 

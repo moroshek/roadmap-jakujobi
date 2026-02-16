@@ -161,78 +161,331 @@ Fallback if blocked:
 
 ---
 
-### P3 - Matrix UI Core (100-135 min)
+### P3 - Matrix UI Core (100-135 min) [DONE]
+
+**Detailed Plan:** See `docs/planning/2026-02-15-phase3-execution-plan.md` for the full agent-ready implementation guide.
 
 Purpose:
 
-- Deliver the pass/fail feature at `/matrix`.
+- Deliver the **critical pass/fail requirement**: functional Strategy Matrix at `/matrix` route.
+- Build interactive scatter plot with enhanced interactions (hover + click-to-modal).
+- Implement mobile-responsive design with WCAG 2.1 AA accessibility.
+- Achieve comprehensive automated test coverage (unit + integration).
 
 Files to create/update:
 
-- `src/app/matrix/page.tsx`
-- `src/components/matrix/StrategyMatrix.tsx`
-- `src/components/matrix/MatrixTooltip.tsx`
-- `src/components/matrix/QuadrantOverlay.tsx`
-- `tests/integration/matrix/matrix-page.integration.test.tsx`
+**Foundation (5 min):**
+- `src/lib/hooks/useProjects.ts` (data fetching hook connecting to P2 pipeline)
+- `src/contexts/MatrixContext.tsx` (React Context for state management)
+
+**Core Components (18 min):**
+- `src/components/matrix/MatrixChart.tsx` (Recharts scatter chart with interaction handlers)
+- `src/components/matrix/QuadrantOverlay.tsx` (SVG background zones with semantic colors)
+- `src/components/matrix/MatrixTooltip.tsx` (hover tooltip with title + quadrant + ROI)
+- `src/components/matrix/ProjectModal.tsx` (click-to-expand modal with full project details)
+
+**Page Integration (5 min):**
+- `src/app/matrix/page.tsx` (main page with loading/error/empty states)
+
+**Testing (12 min):**
+- `src/components/matrix/MatrixChart.test.tsx` (unit tests for chart component)
+- `src/components/matrix/QuadrantOverlay.test.tsx` (unit tests for overlay)
+- `src/components/matrix/MatrixTooltip.test.tsx` (unit tests for tooltip)
+- `src/components/matrix/ProjectModal.test.tsx` (unit tests for modal)
+- `src/lib/hooks/useProjects.test.tsx` (unit tests for data hook)
+- `tests/integration/matrix/matrix-page.integration.test.tsx` (end-to-end integration test)
+
+**Expected test count:** 36+ new tests (target: 113+ total with P1+P2)
 
 Implementation notes:
 
-- Use Recharts ScatterChart.
-- Axis mapping: `x = effortNormalized`, `y = impactNormalized`.
-- Add quadrant visuals/labels and central split at 50.
-- Tooltip must include: title + quadrant label (and ROI).
+- **Chart library:** Recharts (already installed, React-friendly, declarative API)
+- **Axis mapping:** `x = effortNormalized` (0-100), `y = impactNormalized` (0-100)
+- **Quadrant boundaries:** Split at x=50, y=50 per PRD Section 2.1
+- **Interactions:** 
+  - Hover: Show tooltip with project title, quadrant label, and ROI
+  - Click: Open modal overlay with full project details
+  - Highlight: Selected/hovered points use larger size and full opacity
+- **Color scheme:** Brand-based with semantic hints (green=Quick Wins, blue=Big Bets, gray=Fillers, amber=Time Sinks)
+- **State management:** React Context (MatrixContext) to share selected/hovered state across components
+- **Data flow:** Client-side `useProjects()` hook calls `loadAndTransformProjects()` from P2 pipeline
+- **Loading states:** Skeleton loader with spinner animation during data fetch
+- **Error handling:** Error display with retry button, empty state with helpful message
+- **Responsive:** Mobile-friendly breakpoints, touch-friendly tap targets (44px min)
+- **Accessibility:** WCAG 2.1 AA compliance (keyboard nav, ARIA labels, focus indicators, screen reader support)
+- **Animations:** Subtle fade-in on load, smooth hover transitions (200-300ms)
 
 Commands/validation:
 
-- `npm run dev` and manual interaction test on `/matrix`
-- Checklist:
-  - chart renders
-  - 4 points visible
-  - tooltip content correct
-  - quadrant position correctness matches PRD rules
+- `npm run test` (should show 113+ passing tests: 50 P1 + 27 P2 + 36+ P3)
+- `npm run test:coverage` (target: >85% coverage for Phase 3 files)
+- `npm run build` (must succeed with no errors)
+- `npm run dev` and manual interaction test on `/matrix`:
+  - Chart renders with all 4 seeded projects visible
+  - Axes labeled correctly (Effort/Complexity on X, Impact/Strategic Value on Y)
+  - Quadrant zones visible with labels (Quick Wins, Big Bets, Fillers, Time Sinks)
+  - Tooltip shows on hover with title + quadrant + ROI
+  - Click opens modal with comprehensive project details
+  - Modal closes with Escape key or close button
+  - Loading skeleton appears briefly during initial load
+  - No console errors in browser devtools
+
+Manual validation checklist:
+
+- [ ] PRJ-001 (86, 32) displays in Quick Wins quadrant (top-left)
+- [ ] PRJ-002 (91, 82) displays in Big Bets quadrant (top-right)
+- [ ] PRJ-003 (39, 28) displays in Fillers quadrant (bottom-left)
+- [ ] PRJ-004 (41, 87) displays in Time Sinks quadrant (bottom-right)
+- [ ] Tooltip shows formatted ROI (e.g., "$120,000" not "120000")
+- [ ] Modal shows all project metadata (owner, department, phase, dates, scores, financials, tags)
+- [ ] Keyboard navigation works (Tab to focus, Enter/Space to activate, Escape to close modal)
+- [ ] Mobile responsive (test at 320px, 768px, 1280px widths)
+- [ ] Touch interactions work on mobile device or browser touch emulation
 
 Exit gate:
 
-- All must-have UI behavior is complete and verified.
+- All must-have UI behavior is complete and verified:
+  - ✅ Route `/matrix` renders without error
+  - ✅ Scatter plot displays with correct axes and scale
+  - ✅ All 4 projects render as points in correct quadrants
+  - ✅ Quadrant zones visible with proper labels
+  - ✅ Tooltip shows required fields (title + quadrant + ROI)
+  - ✅ Interactive (hover + click work)
+  - ✅ Unit tests pass (36+ new tests)
+  - ✅ Integration test passes
+  - ✅ Build succeeds
+  - ✅ No blocking console errors
 
 Fallback if blocked:
 
-- Keep chart simple (no animation), prioritize correctness and tooltip fields.
+- If time reaches minute 130 without completion:
+  1. **Drop:** Click-to-modal interaction (keep hover tooltip only)
+  2. **Drop:** Integration tests (rely on unit tests + manual QA)
+  3. **Drop:** Subtle animations (use instant state changes)
+  4. **Keep:** All core chart functionality (axes, points, quadrants, tooltip)
+  5. **Keep:** Loading and error states
+  6. **Keep:** Unit tests for critical components
 
 ---
 
-### P4 - Bonus Scope (135-160 min)
+### P4 - Bonus Scope (135-160 min) [DONE]
+
+**Detailed Plan:** See `docs/planning/2026-02-15-phase4-execution-plan.md` for the full agent-ready implementation guide.
 
 Purpose:
 
-- Add high-value polish only after must-have is green.
+- Transform functional application into impressive, portfolio-ready submission.
+- Add professional polish through executive dashboard, interactive filters, and responsive design.
+- Demonstrate technical versatility beyond the must-have requirements.
 
-Priority order:
+**Strategy:** Flexible prioritization - complete at least 2 of 3 feature areas without breaking Phase 3.
 
-1. Department + phase filters.
-2. Dashboard metric cards (`Total Investment`, `Active Count`) on `/`.
-3. Responsive and accessibility pass for matrix page.
+#### Feature Area A: Executive Dashboard (8 files, 12 tests, 10 min)
 
-Files to create/update:
+**Purpose:** Professional home page with key metrics and portfolio insights
 
-- `src/components/matrix/MatrixFilters.tsx`
-- `src/lib/filters/applyMatrixFilters.ts`
-- `src/app/page.tsx`
-- `tests/unit/filters/applyMatrixFilters.test.ts`
+**Components to create:**
+- `src/components/dashboard/MetricCard.tsx` (reusable metric display card)
+- `src/components/dashboard/PhaseDistribution.tsx` (bar chart by phase)
+- `src/components/dashboard/StatusBreakdown.tsx` (status count grid)
+
+**Page to enhance:**
+- `src/app/page.tsx` (add data loading, metric computation, dashboard layout)
+
+**Tests to create:**
+- `tests/unit/dashboard/MetricCard.test.tsx` (3 tests)
+- `tests/unit/dashboard/PhaseDistribution.test.tsx` (3 tests)
+- `tests/unit/dashboard/StatusBreakdown.test.tsx` (3 tests)
+- `tests/integration/dashboard/home-page.integration.test.tsx` (3 tests)
+
+**Metrics to display:**
+- Total Investment (sum of estimated costs)
+- Active Projects (count with status "Active")
+- Projected ROI (sum of projected returns)
+- ROI Multiplier (ROI / Investment ratio)
+- Phase Distribution (projects per phase with bar chart)
+- Status Breakdown (5 status categories with counts)
+- CTA section linking to Strategy Matrix
+
+**Design:**
+- Responsive grid: 1 column (mobile) → 2 columns (tablet) → 4 columns (desktop)
+- White cards with subtle shadows
+- Large numbers for quick scanning (text-3xl)
+- Professional color scheme (gray + brand colors from config.json)
+
+#### Feature Area B: Matrix Filters (8 files, 14 tests, 12 min)
+
+**Purpose:** Enable filtering Strategy Matrix by department, phase, and status
+
+**Filter logic:**
+- `src/lib/filters/applyMatrixFilters.ts` (core filter functions)
+  - `applyMatrixFilters()` - filter projects by criteria
+  - `countActiveFilters()` - count active filters
+  - `parseFiltersFromURL()` - URL → filter object
+  - `serializeFiltersToURL()` - filter object → URL
+- `src/lib/filters/filterUtils.ts` (helper functions)
+
+**Filter UI:**
+- `src/components/matrix/MatrixFilters.tsx` (interactive filter panel)
+  - Checkbox UI for multi-select
+  - URL state management (Next.js router)
+  - "Clear All" button with count badge
+
+**Page integration:**
+- `src/app/matrix/page.tsx` (update to integrate filters)
+  - Accept `searchParams` prop
+  - Parse filters from URL
+  - Apply filters to projects
+  - Pass filtered data to chart
+  - Show filter count in heading
+
+**Tests to create:**
+- `tests/unit/filters/applyMatrixFilters.test.ts` (8 tests: no filters, single filter, multiple filters, OR/AND logic, URL parsing)
+- `tests/unit/matrix/MatrixFilters.test.tsx` (6 tests: render, toggle, URL update, clear all)
+
+**Filter behavior:**
+- Within category: OR logic (Sales OR Manufacturing)
+- Across categories: AND logic (Sales AND Foundation)
+- Empty array: Show all (no filter applied)
+- URL-driven: Query params persist state (`?dept=Sales&phase=Foundation`)
+
+**Available filters (from config.json):**
+- Departments: Manufacturing, Supply Chain, Sales, After-Sales
+- Phases: Foundation, Acceleration, Scale
+- Statuses: Backlog, Queued, Active, Paused, Complete
+
+#### Feature Area C: Responsive & Accessibility (updates only, 6 tests, 3 min)
+
+**Purpose:** Mobile-friendly design and WCAG 2.1 AA compliance
+
+**Responsive design:**
+- Mobile (<768px): Single column stack, collapsible filters
+- Tablet (768px-1023px): 2-column layouts
+- Desktop (1024px+): 4-column metrics, side-by-side charts
+- Touch targets: Minimum 44×44px tap areas
+- Chart sizing: Responsive container with aspect ratio
+
+**Accessibility improvements:**
+- Keyboard navigation: Tab through controls, Enter/Space activate, Escape closes modal
+- Screen readers: ARIA labels, landmark regions (main, nav, section), descriptive text
+- Focus management: Visible focus indicators (2px outline), logical tab order, focus trap in modal
+- Color contrast: All text meets WCAG AA (4.5:1 minimum) - already verified
+
+**Implementation:**
+- Update existing files with responsive Tailwind classes (sm/md/lg breakpoints)
+- Add ARIA attributes (role, aria-label, aria-labelledby)
+- Enhance keyboard handlers (some already done in P3)
+
+**Tests to create:**
+- `tests/unit/accessibility/keyboard-nav.test.tsx` (3 tests: tab navigation, escape key, enter/space)
+- `tests/unit/accessibility/aria-labels.test.tsx` (3 tests: landmarks, navigation roles, descriptive labels)
+
+#### Implementation Sequence (Time-Ordered)
+
+| Step | Duration | Cumulative | Task | Priority |
+|------|----------|------------|------|----------|
+| 4A.1 | 3 min | 138 min | Create 3 dashboard components | P1 |
+| 4A.2 | 5 min | 143 min | Enhance home page with metrics | P1 |
+| 4A.3 | 2 min | 145 min | Write 12 dashboard tests | P1 |
+| 4B.1 | 4 min | 149 min | Create filter logic + utils | P2 |
+| 4B.2 | 3 min | 152 min | Build MatrixFilters component | P2 |
+| 4B.3 | 3 min | 155 min | Update matrix page integration | P2 |
+| 4B.4 | 2 min | 157 min | Write 14 filter tests | P2 |
+| 4C.1 | 2 min | 159 min | Add responsive classes + ARIA | P3 |
+| 4C.2 | 1 min | 160 min | Write 6 accessibility tests | P3 |
+
+**Critical path:** Dashboard → Filters → Responsive/A11y
 
 Commands/validation:
 
-- Filter toggles update visible data points correctly.
-- Dashboard metrics match transformed dataset totals.
-- Mobile viewport spot-check for layout breakage.
+- `npm run test` (should show 140+ passing tests: 108 P1-P3 + 32+ P4)
+- `npm run test:coverage` (target: >85% coverage for Phase 4 files)
+- `npm run build` (must succeed with no errors)
+- `npm run dev` and manual testing:
+  - **Dashboard:** Home page shows metrics, all cards render, calculations correct
+  - **Filters:** Checkboxes update URL, chart updates, "Clear All" works, empty state shows when no matches
+  - **Responsive:** Test at 320px (mobile), 768px (tablet), 1280px (desktop)
+  - **Accessibility:** Tab through UI, test keyboard nav, verify ARIA labels with screen reader
+
+Manual validation checklist:
+
+**Dashboard (after 4A):**
+- [ ] Home page renders without errors
+- [ ] All 4 metric cards display data
+- [ ] Total Investment = sum of all project costs
+- [ ] Active Projects = count of status "Active"
+- [ ] Projected ROI = sum of all projected returns
+- [ ] ROI Multiplier = ROI / Investment (e.g., "2.4x")
+- [ ] Phase distribution shows all 3 phases
+- [ ] Status breakdown shows all 5 statuses
+- [ ] Link to matrix navigates correctly
+- [ ] Responsive at mobile/tablet/desktop
+
+**Filters (after 4B):**
+- [ ] Filter panel renders in sidebar
+- [ ] All checkboxes clickable and toggle correctly
+- [ ] URL updates on filter change (visible in address bar)
+- [ ] Chart updates with filtered data (point count changes)
+- [ ] Multiple filters within category work (OR logic: Sales OR Manufacturing shows both)
+- [ ] Filters across categories work (AND logic: Sales AND Foundation shows only matching)
+- [ ] "Clear All" button resets to full view
+- [ ] Active filter count badge shows correct number
+- [ ] Empty state displays when no matches
+- [ ] Filters collapse on mobile (<lg breakpoint)
+
+**Responsive/A11y (after 4C):**
+- [ ] Dashboard metrics stack on mobile (1 column)
+- [ ] Dashboard metrics 2-column on tablet
+- [ ] Dashboard metrics 4-column on desktop
+- [ ] Matrix filters collapse to <details> on mobile
+- [ ] Touch targets ≥44px on mobile
+- [ ] Tab through dashboard (logical order)
+- [ ] Tab through filter checkboxes
+- [ ] Enter/Space activate checkboxes
+- [ ] Escape closes modal (if opened)
+- [ ] Focus indicators visible on all controls
+- [ ] ARIA labels present (check with DevTools)
+- [ ] Screen reader announces controls (basic test)
 
 Exit gate:
 
-- At least one bonus feature completed with no must-have regressions.
+- **Minimum success:** At least 2 of 3 feature areas complete (preferably Dashboard + Filters)
+- **Target success:** All 3 feature areas complete
+- **Quality gates:**
+  - ✅ At least 26 new tests passing (dashboard + filters minimum)
+  - ✅ Build succeeds
+  - ✅ No regressions in Phase 3 functionality (matrix still works)
+  - ✅ No console errors in browser
+  - ✅ Responsive at 3 breakpoints (if C complete)
 
 Fallback if blocked:
 
-- Drop dashboard first, keep filters if stable.
+**If minute 152 reached without dashboard complete:**
+- Ship simplified dashboard (metric cards only, no charts)
+- Skip filters entirely
+- Focus on test coverage for what's built
+
+**If minute 158 reached without filters complete:**
+- Ship dashboard complete
+- Skip filters and responsive work
+- Ensure no regressions in Phase 3
+
+**If tests failing at minute 159:**
+- Fix blocking test failures only
+- Skip accessibility tests if needed
+- Ensure build passes (required for submission)
+
+**Priority-based decision tree:**
+1. **Dashboard** has highest visual impact, establishes patterns → Do first
+2. **Filters** provide core UX improvement, reusable logic → Do second
+3. **Responsive/A11y** add polish, lower risk → Do last
+
+**Protected functionality (must not break):**
+- ✅ Strategy Matrix at `/matrix` route
+- ✅ Scatter plot with quadrants
+- ✅ Hover tooltip
+- ✅ Click-to-modal
+- ✅ All 108 existing tests
 
 ---
 
