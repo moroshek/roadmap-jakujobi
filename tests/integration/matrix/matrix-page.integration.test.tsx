@@ -3,11 +3,17 @@
  *
  * Tests the complete flow: load projects from disk, transform via P2 pipeline,
  * render in chart. Uses real loadAndTransformProjects (no mocks at integration level).
+ * Mocks next/navigation for MatrixFilters (no App Router in test env).
  */
 
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import MatrixPage from "@/app/matrix/page";
+
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: vi.fn() }),
+  useSearchParams: () => new URLSearchParams(),
+}));
 
 describe("Matrix Page Integration", () => {
   it("renders strategy matrix heading", () => {

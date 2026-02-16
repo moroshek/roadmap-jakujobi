@@ -268,38 +268,224 @@ Fallback if blocked:
 
 ---
 
-### P4 - Bonus Scope (135-160 min)
+### P4 - Bonus Scope (135-160 min) [READY]
+
+**Detailed Plan:** See `docs/planning/2026-02-15-phase4-execution-plan.md` for the full agent-ready implementation guide.
 
 Purpose:
 
-- Add high-value polish only after must-have is green.
+- Transform functional application into impressive, portfolio-ready submission.
+- Add professional polish through executive dashboard, interactive filters, and responsive design.
+- Demonstrate technical versatility beyond the must-have requirements.
 
-Priority order:
+**Strategy:** Flexible prioritization - complete at least 2 of 3 feature areas without breaking Phase 3.
 
-1. Department + phase filters.
-2. Dashboard metric cards (`Total Investment`, `Active Count`) on `/`.
-3. Responsive and accessibility pass for matrix page.
+#### Feature Area A: Executive Dashboard (8 files, 12 tests, 10 min)
 
-Files to create/update:
+**Purpose:** Professional home page with key metrics and portfolio insights
 
-- `src/components/matrix/MatrixFilters.tsx`
-- `src/lib/filters/applyMatrixFilters.ts`
-- `src/app/page.tsx`
-- `tests/unit/filters/applyMatrixFilters.test.ts`
+**Components to create:**
+- `src/components/dashboard/MetricCard.tsx` (reusable metric display card)
+- `src/components/dashboard/PhaseDistribution.tsx` (bar chart by phase)
+- `src/components/dashboard/StatusBreakdown.tsx` (status count grid)
+
+**Page to enhance:**
+- `src/app/page.tsx` (add data loading, metric computation, dashboard layout)
+
+**Tests to create:**
+- `tests/unit/dashboard/MetricCard.test.tsx` (3 tests)
+- `tests/unit/dashboard/PhaseDistribution.test.tsx` (3 tests)
+- `tests/unit/dashboard/StatusBreakdown.test.tsx` (3 tests)
+- `tests/integration/dashboard/home-page.integration.test.tsx` (3 tests)
+
+**Metrics to display:**
+- Total Investment (sum of estimated costs)
+- Active Projects (count with status "Active")
+- Projected ROI (sum of projected returns)
+- ROI Multiplier (ROI / Investment ratio)
+- Phase Distribution (projects per phase with bar chart)
+- Status Breakdown (5 status categories with counts)
+- CTA section linking to Strategy Matrix
+
+**Design:**
+- Responsive grid: 1 column (mobile) → 2 columns (tablet) → 4 columns (desktop)
+- White cards with subtle shadows
+- Large numbers for quick scanning (text-3xl)
+- Professional color scheme (gray + brand colors from config.json)
+
+#### Feature Area B: Matrix Filters (8 files, 14 tests, 12 min)
+
+**Purpose:** Enable filtering Strategy Matrix by department, phase, and status
+
+**Filter logic:**
+- `src/lib/filters/applyMatrixFilters.ts` (core filter functions)
+  - `applyMatrixFilters()` - filter projects by criteria
+  - `countActiveFilters()` - count active filters
+  - `parseFiltersFromURL()` - URL → filter object
+  - `serializeFiltersToURL()` - filter object → URL
+- `src/lib/filters/filterUtils.ts` (helper functions)
+
+**Filter UI:**
+- `src/components/matrix/MatrixFilters.tsx` (interactive filter panel)
+  - Checkbox UI for multi-select
+  - URL state management (Next.js router)
+  - "Clear All" button with count badge
+
+**Page integration:**
+- `src/app/matrix/page.tsx` (update to integrate filters)
+  - Accept `searchParams` prop
+  - Parse filters from URL
+  - Apply filters to projects
+  - Pass filtered data to chart
+  - Show filter count in heading
+
+**Tests to create:**
+- `tests/unit/filters/applyMatrixFilters.test.ts` (8 tests: no filters, single filter, multiple filters, OR/AND logic, URL parsing)
+- `tests/unit/matrix/MatrixFilters.test.tsx` (6 tests: render, toggle, URL update, clear all)
+
+**Filter behavior:**
+- Within category: OR logic (Sales OR Manufacturing)
+- Across categories: AND logic (Sales AND Foundation)
+- Empty array: Show all (no filter applied)
+- URL-driven: Query params persist state (`?dept=Sales&phase=Foundation`)
+
+**Available filters (from config.json):**
+- Departments: Manufacturing, Supply Chain, Sales, After-Sales
+- Phases: Foundation, Acceleration, Scale
+- Statuses: Backlog, Queued, Active, Paused, Complete
+
+#### Feature Area C: Responsive & Accessibility (updates only, 6 tests, 3 min)
+
+**Purpose:** Mobile-friendly design and WCAG 2.1 AA compliance
+
+**Responsive design:**
+- Mobile (<768px): Single column stack, collapsible filters
+- Tablet (768px-1023px): 2-column layouts
+- Desktop (1024px+): 4-column metrics, side-by-side charts
+- Touch targets: Minimum 44×44px tap areas
+- Chart sizing: Responsive container with aspect ratio
+
+**Accessibility improvements:**
+- Keyboard navigation: Tab through controls, Enter/Space activate, Escape closes modal
+- Screen readers: ARIA labels, landmark regions (main, nav, section), descriptive text
+- Focus management: Visible focus indicators (2px outline), logical tab order, focus trap in modal
+- Color contrast: All text meets WCAG AA (4.5:1 minimum) - already verified
+
+**Implementation:**
+- Update existing files with responsive Tailwind classes (sm/md/lg breakpoints)
+- Add ARIA attributes (role, aria-label, aria-labelledby)
+- Enhance keyboard handlers (some already done in P3)
+
+**Tests to create:**
+- `tests/unit/accessibility/keyboard-nav.test.tsx` (3 tests: tab navigation, escape key, enter/space)
+- `tests/unit/accessibility/aria-labels.test.tsx` (3 tests: landmarks, navigation roles, descriptive labels)
+
+#### Implementation Sequence (Time-Ordered)
+
+| Step | Duration | Cumulative | Task | Priority |
+|------|----------|------------|------|----------|
+| 4A.1 | 3 min | 138 min | Create 3 dashboard components | P1 |
+| 4A.2 | 5 min | 143 min | Enhance home page with metrics | P1 |
+| 4A.3 | 2 min | 145 min | Write 12 dashboard tests | P1 |
+| 4B.1 | 4 min | 149 min | Create filter logic + utils | P2 |
+| 4B.2 | 3 min | 152 min | Build MatrixFilters component | P2 |
+| 4B.3 | 3 min | 155 min | Update matrix page integration | P2 |
+| 4B.4 | 2 min | 157 min | Write 14 filter tests | P2 |
+| 4C.1 | 2 min | 159 min | Add responsive classes + ARIA | P3 |
+| 4C.2 | 1 min | 160 min | Write 6 accessibility tests | P3 |
+
+**Critical path:** Dashboard → Filters → Responsive/A11y
 
 Commands/validation:
 
-- Filter toggles update visible data points correctly.
-- Dashboard metrics match transformed dataset totals.
-- Mobile viewport spot-check for layout breakage.
+- `npm run test` (should show 140+ passing tests: 108 P1-P3 + 32+ P4)
+- `npm run test:coverage` (target: >85% coverage for Phase 4 files)
+- `npm run build` (must succeed with no errors)
+- `npm run dev` and manual testing:
+  - **Dashboard:** Home page shows metrics, all cards render, calculations correct
+  - **Filters:** Checkboxes update URL, chart updates, "Clear All" works, empty state shows when no matches
+  - **Responsive:** Test at 320px (mobile), 768px (tablet), 1280px (desktop)
+  - **Accessibility:** Tab through UI, test keyboard nav, verify ARIA labels with screen reader
+
+Manual validation checklist:
+
+**Dashboard (after 4A):**
+- [ ] Home page renders without errors
+- [ ] All 4 metric cards display data
+- [ ] Total Investment = sum of all project costs
+- [ ] Active Projects = count of status "Active"
+- [ ] Projected ROI = sum of all projected returns
+- [ ] ROI Multiplier = ROI / Investment (e.g., "2.4x")
+- [ ] Phase distribution shows all 3 phases
+- [ ] Status breakdown shows all 5 statuses
+- [ ] Link to matrix navigates correctly
+- [ ] Responsive at mobile/tablet/desktop
+
+**Filters (after 4B):**
+- [ ] Filter panel renders in sidebar
+- [ ] All checkboxes clickable and toggle correctly
+- [ ] URL updates on filter change (visible in address bar)
+- [ ] Chart updates with filtered data (point count changes)
+- [ ] Multiple filters within category work (OR logic: Sales OR Manufacturing shows both)
+- [ ] Filters across categories work (AND logic: Sales AND Foundation shows only matching)
+- [ ] "Clear All" button resets to full view
+- [ ] Active filter count badge shows correct number
+- [ ] Empty state displays when no matches
+- [ ] Filters collapse on mobile (<lg breakpoint)
+
+**Responsive/A11y (after 4C):**
+- [ ] Dashboard metrics stack on mobile (1 column)
+- [ ] Dashboard metrics 2-column on tablet
+- [ ] Dashboard metrics 4-column on desktop
+- [ ] Matrix filters collapse to <details> on mobile
+- [ ] Touch targets ≥44px on mobile
+- [ ] Tab through dashboard (logical order)
+- [ ] Tab through filter checkboxes
+- [ ] Enter/Space activate checkboxes
+- [ ] Escape closes modal (if opened)
+- [ ] Focus indicators visible on all controls
+- [ ] ARIA labels present (check with DevTools)
+- [ ] Screen reader announces controls (basic test)
 
 Exit gate:
 
-- At least one bonus feature completed with no must-have regressions.
+- **Minimum success:** At least 2 of 3 feature areas complete (preferably Dashboard + Filters)
+- **Target success:** All 3 feature areas complete
+- **Quality gates:**
+  - ✅ At least 26 new tests passing (dashboard + filters minimum)
+  - ✅ Build succeeds
+  - ✅ No regressions in Phase 3 functionality (matrix still works)
+  - ✅ No console errors in browser
+  - ✅ Responsive at 3 breakpoints (if C complete)
 
 Fallback if blocked:
 
-- Drop dashboard first, keep filters if stable.
+**If minute 152 reached without dashboard complete:**
+- Ship simplified dashboard (metric cards only, no charts)
+- Skip filters entirely
+- Focus on test coverage for what's built
+
+**If minute 158 reached without filters complete:**
+- Ship dashboard complete
+- Skip filters and responsive work
+- Ensure no regressions in Phase 3
+
+**If tests failing at minute 159:**
+- Fix blocking test failures only
+- Skip accessibility tests if needed
+- Ensure build passes (required for submission)
+
+**Priority-based decision tree:**
+1. **Dashboard** has highest visual impact, establishes patterns → Do first
+2. **Filters** provide core UX improvement, reusable logic → Do second
+3. **Responsive/A11y** add polish, lower risk → Do last
+
+**Protected functionality (must not break):**
+- ✅ Strategy Matrix at `/matrix` route
+- ✅ Scatter plot with quadrants
+- ✅ Hover tooltip
+- ✅ Click-to-modal
+- ✅ All 108 existing tests
 
 ---
 
