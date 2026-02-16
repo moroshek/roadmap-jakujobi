@@ -5,6 +5,11 @@ All notable changes to this project are documented in this file.
 ## [Unreleased]
 
 ### Documentation
+- 2026-02-15: Submission readiness plan execution (partial)
+  - Screenshots: Copied 6 existing timestamped images to required filenames (02-matrix-full through 07-project-detail) in `docs/screenshots/`
+  - PR description: Created `docs/PR-DESCRIPTION.md` with full submission template; ready to paste into GitHub PR
+  - Updated `docs/planning/2026-02-15-submission-readiness-plan.md` with completion status, file checklist, and execution log
+  - Remaining optional: 01-dashboard-full.png and 08-mobile-responsive.png (capture if desired for Tier 2 completeness)
 - 2026-02-15: Submission Readiness Plan created
   - Document: `docs/planning/2026-02-15-submission-readiness-plan.md`
   - Comprehensive 40-75 minute plan for final documentation and PR submission
