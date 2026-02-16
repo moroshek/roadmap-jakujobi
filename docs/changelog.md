@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+- 2026-02-15: Ctrl+R on /matrix causing webpack cache ENOENT and 404s
+  - Added `npm run dev:clean` - clears `.next` cache and starts dev server
+  - Root cause: Webpack PackFileCacheStrategy race when hard-reloading
+  - Workaround: Run `dev:clean` when reload breaks; ensure only one dev server
+
 ### Added
 - 2026-02-15: Phase 4 Bonus Features & Polish (COMPLETED)
   - `src/components/dashboard/MetricCard.tsx` - Reusable metric display card
