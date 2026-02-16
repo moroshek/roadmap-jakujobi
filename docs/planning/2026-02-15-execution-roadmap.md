@@ -161,7 +161,7 @@ Fallback if blocked:
 
 ---
 
-### P3 - Matrix UI Core (100-135 min)
+### P3 - Matrix UI Core (100-135 min) [DONE]
 
 **Detailed Plan:** See `docs/planning/2026-02-15-phase3-execution-plan.md` for the full agent-ready implementation guide.
 
