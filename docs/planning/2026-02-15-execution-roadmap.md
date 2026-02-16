@@ -268,7 +268,7 @@ Fallback if blocked:
 
 ---
 
-### P4 - Bonus Scope (135-160 min) [READY]
+### P4 - Bonus Scope (135-160 min) [DONE]
 
 **Detailed Plan:** See `docs/planning/2026-02-15-phase4-execution-plan.md` for the full agent-ready implementation guide.
 

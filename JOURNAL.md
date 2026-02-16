@@ -339,6 +339,27 @@
 - [NOTE] ResizeObserver mock added to tests/setup.ts for Recharts in jsdom
 - [DECISION] Phase 3 APPROVED - ready for Phase 4 Bonus Features
 
+## 2026-02-15 Phase 4 Bonus Features & Polish (COMPLETED)
+
+- [ADD] Executive Dashboard (Feature Area A)
+  - MetricCard, PhaseDistribution, StatusBreakdown components
+  - Home page: 4 metric cards (Total Investment, Active Projects, Projected ROI, Portfolio Health)
+  - Phase distribution bar chart, status breakdown grid
+  - CTA linking to Strategy Matrix
+- [ADD] Matrix Filters (Feature Area B)
+  - applyMatrixFilters.ts: pure filter logic, URL parse/serialize
+  - MatrixFilters: Department/Phase/Status checkboxes, Clear All
+  - MatrixPageWithFilters: client wrapper with useSearchParams
+  - OR within category, AND across categories
+  - Static export compatible (client-side filtering)
+- [ADD] Responsive & Accessibility (Feature Area C)
+  - ARIA labels on dashboard, MetricCard, MatrixFilters
+  - Keyboard focusable: checkboxes, CTA link
+  - Suspense boundary for useSearchParams (Next.js 14)
+- [NOTE] Test Results: 140/140 tests passing (108 existing + 32 new)
+- [NOTE] Build: npm run build succeeds
+- [NOTE] All 3 feature areas complete; no Phase 3 regressions
+
 ## 2026-02-15 Phase 3 Review & Validation (COMPLETED)
 
 - [REVIEW] Conducted comprehensive Phase 3 implementation review

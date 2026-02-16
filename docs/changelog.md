@@ -4,6 +4,27 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+### Added
+- 2026-02-15: Phase 4 Bonus Features & Polish (COMPLETED)
+  - `src/components/dashboard/MetricCard.tsx` - Reusable metric display card
+  - `src/components/dashboard/PhaseDistribution.tsx` - Bar chart for projects by phase
+  - `src/components/dashboard/StatusBreakdown.tsx` - Status count grid (Active, Queued, Backlog, Paused, Complete)
+  - `src/lib/filters/applyMatrixFilters.ts` - Filter logic: applyMatrixFilters, countActiveFilters, parseFiltersFromURL, serializeFiltersToURL
+  - `src/components/matrix/MatrixFilters.tsx` - Interactive filter panel (Department, Phase, Status) with URL state
+  - `src/components/matrix/MatrixPageWithFilters.tsx` - Client wrapper applying URL-driven filters
+  - Enhanced `src/app/page.tsx` - Executive dashboard with 4 metric cards, phase distribution, status breakdown, CTA
+  - Enhanced `src/app/matrix/page.tsx` - Integrated filters via MatrixPageWithFilters, Suspense for useSearchParams
+  - `tests/unit/dashboard/` - MetricCard, PhaseDistribution, StatusBreakdown (9 tests)
+  - `tests/integration/dashboard/home-page.integration.test.tsx` - 3 integration tests
+  - `tests/unit/filters/applyMatrixFilters.test.ts` - 11 filter logic tests
+  - `tests/unit/matrix/MatrixFilters.test.tsx` - 4 filter UI tests
+  - `tests/unit/accessibility/aria-labels.test.tsx` - 3 ARIA tests
+  - `tests/unit/accessibility/keyboard-nav.test.tsx` - 2 keyboard nav tests
+  - 32 new tests (140 total); build succeeds; all 3 feature areas complete
+  - Dashboard: Total Investment, Active Projects, Projected ROI, Portfolio Health
+  - Filters: OR within category, AND across categories, URL-driven state, Clear All
+  - Responsive: sm/md/lg breakpoints, ARIA labels, 44px touch targets
+
 ### Planning
 - 2026-02-15: Phase 4 Bonus Features & Polish Comprehensive Planning (COMPLETED)
   - Conducted detailed brainstorming and critical design session for Phase 4
