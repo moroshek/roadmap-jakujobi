@@ -2375,11 +2375,277 @@ Directory: **p:\repos\hiring\roadmap-jakujobi\src** (54 files)
 
 <details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\API.md</summary>
 
-Status: **loading**
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Create CONTRIBUTING.md with dev setup, code style, testing, PR process
+- [x] Create docs/API.md - component APIs, library functions, data schema
+- [-] Create docs/ARCHITECTURE.md - pipeline, hierarchy, build/runtime
+- [ ] Create docs/DEPLOYMENT.md - build, static hosting, env config
+- [ ] Create docs/USER-GUIDE.md - views, filter/search, interpretation
+- [ ] Update docs/changelog.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\ARCHITECTURE.md</summary>
 
 </details>
 
 </tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Create CONTRIBUTING.md with dev setup, code style, testing, PR process
+- [x] Create docs/API.md - component APIs, library functions, data schema
+- [x] Create docs/ARCHITECTURE.md - pipeline, hierarchy, build/runtime
+- [-] Create docs/DEPLOYMENT.md - build, static hosting, env config
+- [ ] Create docs/USER-GUIDE.md - views, filter/search, interpretation
+- [ ] Update docs/changelog.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\DEPLOYMENT.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Create CONTRIBUTING.md with dev setup, code style, testing, PR process
+- [x] Create docs/API.md - component APIs, library functions, data schema
+- [x] Create docs/ARCHITECTURE.md - pipeline, hierarchy, build/runtime
+- [x] Create docs/DEPLOYMENT.md - build, static hosting, env config
+- [-] Create docs/USER-GUIDE.md - views, filter/search, interpretation
+- [ ] Update docs/changelog.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\USER-GUIDE.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Create CONTRIBUTING.md with dev setup, code style, testing, PR process
+- [x] Create docs/API.md - component APIs, library functions, data schema
+- [x] Create docs/ARCHITECTURE.md - pipeline, hierarchy, build/runtime
+- [x] Create docs/DEPLOYMENT.md - build, static hosting, env config
+- [x] Create docs/USER-GUIDE.md - views, filter/search, interpretation
+- [-] Update docs/changelog.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\docs\changelog.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\docs\changelog.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\README.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\README.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Create CONTRIBUTING.md with dev setup, code style, testing, PR process
+- [x] Create docs/API.md - component APIs, library functions, data schema
+- [x] Create docs/ARCHITECTURE.md - pipeline, hierarchy, build/runtime
+- [x] Create docs/DEPLOYMENT.md - build, static hosting, env config
+- [x] Create docs/USER-GUIDE.md - views, filter/search, interpretation
+- [x] Update docs/changelog.md
+
+</details>
+</tool-use>
+
+---
+
+
+All requested documentation is in place. Summary of what was added:
+
+---
+
+## Files Created
+
+### 1. CONTRIBUTING.md
+- **Development setup** – Prereqs, scripts, project layout
+- **Code style** – Functional style, naming, file size, comments
+- **Testing** – Coverage targets, test structure, running tests
+- **PR process** – Before submit, PR rules, review expectations
+- **Extending** – Adding pages, content types, filters
+- **Security** – Input validation, secrets, logging
+
+### 2. docs/API.md
+- **Component APIs** – Matrix, Dashboard, Project library, Roadmap, Layout
+- **Library reference** – Functions in governance, content, validation, filters, search, gantt
+- **Data schemas** – `ProcessedProject`, `MatrixDataPoint`, `TenantConfig`, raw frontmatter
+
+### 3. docs/ARCHITECTURE.md
+- **Data pipeline** – Flow from markdown to UI
+- **Pipeline stages** – Read, parse, validate, transform, enrich, consume
+- **Component hierarchy** – Layout, pages, nested components
+- **Build vs runtime** – What runs at build vs in the browser
+
+### 4. docs/DEPLOYMENT.md
+- **Production build** – `npm run build`, output location, checklist
+- **Static hosting** – Vercel, Netlify, S3+CloudFront, GitHub Pages
+- **Environment** – Optional env vars, tenant config
+- **Multi-tenant deployment** – Deployment options
+
+### 5. docs/USER-GUIDE.md
+- **Views** – Dashboard, Matrix, Roadmap, Project library, Project detail
+- **Filter/search** – Matrix filters (with URL), fuzzy search
+- **Matrix interpretation** – Quadrant definitions and how to use them
+
+---
+
+## Additional Updates
+- **docs/changelog.md** – New section for this documentation work
+- **README.md** – Section 3.0.1 with links to all new docs
+
+---
+
+_**User**_
+
+Updates the journal
+
+---
+
+_**Agent (model composer-1.5, mode Agent)**_
+
+
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: p:\repos\hiring\roadmap-jakujobi\JOURNAL.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: p:\repos\hiring\roadmap-jakujobi\JOURNAL.md</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+
+Updated `JOURNAL.md` with the new entry for the documentation work. The entry covers:
+
+- `CONTRIBUTING.md`, `docs/API.md`, `docs/ARCHITECTURE.md`, `docs/DEPLOYMENT.md`, `docs/USER-GUIDE.md`
+- Updates to `docs/changelog.md` and `README.md`
 
 ---
 
